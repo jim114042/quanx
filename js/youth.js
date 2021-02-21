@@ -149,6 +149,7 @@ if (isGetCookie = typeof $request !== 'undefined') {
 
 
 function GetCookie() {
+console.log($request.url)
     if ($request && $request.method != `OPTIONS`&& $request.url.match(/\/TaskCenter\/(sign|getSign)/)) {
  console.log($request.headers)
         const signheaderVal = JSON.stringify($request.headers)
