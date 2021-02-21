@@ -149,10 +149,7 @@ if (isGetCookie = typeof $request !== 'undefined') {
 
 
 function GetCookie() {
-console.log($request.url)
-console.log(JSON.stringify($request.headers))
     if ($request && $request.method != `OPTIONS`&& $request.url.match(/\/TaskCenter\/(sign|getSign)/)) {
- console.log($request.headers)
         const signheaderVal = JSON.stringify($request.headers)
         if (signheaderVal) $.setdata(signheaderVal,'youthheader_zq' + $.idx)
         $.log(`${$.name + $.idx} 获取Cookie: 成功,signheaderVal: ${signheaderVal}`)
@@ -175,6 +172,11 @@ console.log(JSON.stringify($request.headers))
         if (redpbodyVal) $.setdata(redpbodyVal, 'red_zq' + $.idx)
         $.log(`${$.name + $.idx} 获取惊喜红包: 成功,redpbodyVal: ${redpbodyVal}`)
         $.msg($.name + $.idx, `获取惊喜红包请求: 成功🎉`, ``)
+    }else if ($request && $request.method != `OPTIONS`&& $request.url.match(/\/NewTaskIos\/getTaskList/)) {
+        const signheaderVal = JSON.stringify($request.headers)
+        if (signheaderVal) $.setdata(signheaderVal,'youthheader_zq' + $.idx)
+        $.log(`${$.name + $.idx} 获取Cookie: 成功,signheaderVal: ${signheaderVal}`)
+        $.msg($.name + $.idx, `获取Cookie: 成功🎉`, ``)
     }
 }
 
