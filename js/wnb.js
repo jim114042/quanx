@@ -48,7 +48,6 @@ let wnburl = $.getdata('wnburl')
 let wnbhd = $.getdata('wnbhd')
 let wnbbody = $.getdata('wnbbody')
 !(async () => {
-   console.log('蜗牛吧1')
   if (typeof $request !== "undefined") {
       await wnbck()
   } else {
@@ -66,17 +65,35 @@ for (let i = 0; i < 5; i++) {
       console.log(`\n蜗牛吧开始执行第${i+1}次领取红包！💦\n等待3秒开始领取下一个红包`)
       await wnbhb();
       await $.wait(3000);
-}await wnbxx();
-await wnbtj();
+}
+await wnbxx();
+//await wnbtj();
 
 
   }
 })()
   .catch((e) => $.logErr(e))
   .finally(() => $.done())
+
+function getRequestParams(e) {
+    var t = {};
+    if (-1 != e.indexOf("?")) {
+      var n = e.substr(1);
+      if (-1 === n.indexOf("&")) {
+        var r = n.split("=");
+        t[r[0]] = decodeURI(decodeURI(r[1]));
+      } else {
+        n.split("&").map(function (e, n) {
+          var r = e.split("=");
+          t[r[0]] = decodeURI(r[1]);
+        });
+      }
+    }
+    return t;
+};
+
 //蜗牛吧数据
 function wnbck() {
-  console.log('蜗牛吧ck')
    if ($request.url.indexOf("receiveSystem") > -1){
     $.setdata($request.url,'wnburl')
     //$.log(wnburl)
@@ -86,8 +103,13 @@ function wnbck() {
     $.log(wnbbody)
     $.msg($.name,"","蜗牛吧数据获取成功！")
   }else  if ($request.url.indexOf("getAvailableList") > -1){
-    $.log(JSON.stringify($request.url))
-    $.log(JSON.stringify($request))
+    $.setdata(JSON.stringify($request.headers),'wnbhd')
+    $.setdata($request.url.split('?')[1],'wnbrq')
+
+    var d = getRequestParams('?' + $request.url.split('?')[1])
+    d = d['district']
+    $.setdata(d['district'],'wnbdistrict')
+    $.msg($.name,"","蜗牛吧数据获取成功！", d['district'])
   }
 }
 
@@ -96,19 +118,101 @@ function wnbck() {
 //蜗牛吧红包领取
 function wnbhb(timeout = 0) {
   return new Promise((resolve) => {
-let url = {
-        url : 'https://api.snail2020.com/api/hb/hb/receiveSystem',
+// let url = {
+//         url : 'https://api.snail2020.com/api/hb/hb/receiveSystem',
+//         headers : JSON.parse($.getdata('wnbhd')),
+//         body :  wnbbody,}
+//       $.post(url, async (err, resp, data) => {
+//         try {
+           
+//     const result = JSON.parse(data)
+//         if(result.code == 200){
+//         console.log('蜗牛吧红包领取回执:成功🌝 '+result.msg)
+// }
+// if(result.code == 400 || result.code == 411){
+//         console.log('蜗牛吧红包领取回执:失败🚫 '+result.msg+'\n可能是领取上限或者该时段已经领取完毕')}
+
+//         } catch (e) {
+//           //$.logErr(e, resp);
+//         } finally {
+//           resolve()
+//         }
+//     },timeout)
+
+    let url = {
+        url : 'https://api.snail2020.com/api/hb/hb/getAvailableList?' + $.getdata('wnbrq'),
         headers : JSON.parse($.getdata('wnbhd')),
-        body :  wnbbody,}
-      $.post(url, async (err, resp, data) => {
+        body :  ``,}
+      $.get(url, async (err, resp, data) => {
         try {
            
     const result = JSON.parse(data)
         if(result.code == 200){
-        console.log('蜗牛吧红包领取回执:成功🌝 '+result.msg)
+          console.log('\n\n蜗牛吧获取红包列表成功')
+          let l = result.result
+          l.forEach(t=>{
+            if(t.type==2){
+              console.log(`${t.hbId} --- ${t.title}`);
+              await $.wait(1000);
+              await wnbtj2(t)
+            }
+          })
+        }
+        if(result.code == 400 || result.code == 411){
+          console.log('\n蜗牛吧获取红包列表失败: '+result.msg)}
+
+        } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+    },timeout)
+  })
+}
+
+function wnbtj2(t, timeout = 0) {
+  return new Promise((resolve) => {
+let url = {
+        url : 'https://api.snail2020.com/api/hb/rainHb/receive',
+        headers : JSON.parse($.getdata('wnbhd')),
+        body :  `hbId=${t.hbId}&district=${$.getdata('wnbdistrict')}`,}
+      $.post(url, async (err, resp, data) => {
+        try {
+           
+    const result = JSON.parse(data)
+    if(result.code == 200){
+            console.log('蜗牛吧红包第一步完成')
+            let m = result.result
+            await $.wait(1000);
+            await wnbtj3(t,m)
+    }
+    if(result.code == 400 || result.code == 411){
+            console.log('蜗牛吧红包第一步失败！')}
+
+    } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+    },timeout)
+  })
+}
+
+function wnbtj3(t, m, timeout = 0) {
+  return new Promise((resolve) => {
+let url = {
+        url : `https://api.snail2020.com/api/hb/rainHb/getInfo?hbId=${t.hbId}&receiveId=${m.id}`,
+        headers : JSON.parse($.getdata('wnbhd')),
+        body :  ``,}
+      $.get(url, async (err, resp, data) => {
+        try {
+           
+    const result = JSON.parse(data)
+        if(result.code == 200){
+        console.log('蜗牛吧红包领取成功')
 }
 if(result.code == 400 || result.code == 411){
-        console.log('蜗牛吧红包领取回执:失败🚫 '+result.msg+'\n可能是领取上限或者该时段已经领取完毕')}
+        console.log('蜗牛吧红包领取失败: '+result.msg)}
 
         } catch (e) {
           //$.logErr(e, resp);
