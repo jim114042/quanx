@@ -105,9 +105,7 @@ function wnbck() {
   }else  if ($request.url.indexOf("getAvailableList") > -1){
     $.setdata(JSON.stringify($request.headers),'wnbhd')
     $.setdata($request.url.split('?')[1],'wnbrq')
-
     var d = getRequestParams('?' + $request.url.split('?')[1])
-    d = d['district']
     $.setdata(d['district'],'wnbdistrict')
     $.msg($.name,"","蜗牛吧数据获取成功！", d['district'])
   }
