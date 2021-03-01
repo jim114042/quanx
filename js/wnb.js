@@ -48,6 +48,7 @@ let wnburl = $.getdata('wnburl')
 let wnbhd = $.getdata('wnbhd')
 let wnbbody = $.getdata('wnbbody')
 !(async () => {
+   console.log('蜗牛吧1')
   if (typeof $request !== "undefined") {
       await wnbck()
   } else {
@@ -75,7 +76,7 @@ await wnbtj();
   .finally(() => $.done())
 //蜗牛吧数据
 function wnbck() {
-  $.log('蜗牛吧ck')
+  console.log('蜗牛吧ck')
    if ($request.url.indexOf("receiveSystem") > -1){
     $.setdata($request.url,'wnburl')
     //$.log(wnburl)
