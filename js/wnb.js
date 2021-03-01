@@ -333,7 +333,7 @@ let url = {
            
     const result = JSON.parse(data)
         if(result.code == 200){
-        console.log('\n蜗牛吧领取金币回执:成功🌝 '+result.msg+'芜湖\n')
+        console.log('\n蜗牛吧领取金币回执:成功🌝 '+result.msg+ $.getdata('wnbdistrict') +'\n')
 }
 if(result.code == 400){
         console.log('\n蜗牛吧领取金币回执:失败🚫 '+result.msg+'\n可能是领取上限或者该时段已经领取完毕\n')}
