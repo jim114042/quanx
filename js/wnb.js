@@ -51,14 +51,14 @@ let wnbbody = $.getdata('wnbbody')
   if (typeof $request !== "undefined") {
       await wnbck()
   } else {
-console.log(`\n蜗牛吧开始执行领金币任务！💦\n等待61秒开始领取下一个`)
-    await wnbqd();
-console.log(`\n蜗牛吧开始执行领金币任务！💦\n等待61秒开始领取下一个`)
-    await $.wait(61000);
-    await wnbqd();
-console.log(`\n蜗牛吧开始执行领金币任务！💦\n等待61秒开始领取下一个`)
-    await $.wait(61000);
-    await wnbqd();
+// console.log(`\n蜗牛吧开始执行领金币任务！💦\n等待61秒开始领取下一个`)
+//     await wnbqd();
+// console.log(`\n蜗牛吧开始执行领金币任务！💦\n等待61秒开始领取下一个`)
+//     await $.wait(61000);
+//     await wnbqd();
+// console.log(`\n蜗牛吧开始执行领金币任务！💦\n等待61秒开始领取下一个`)
+//     await $.wait(61000);
+//     await wnbqd();
 
 for (let i = 0; i < 5; i++) {
       $.index = i + 1      
@@ -136,6 +136,10 @@ function wnbhb(timeout = 0) {
             }else if(t.type==7){//城市红包雨
               console.log(`${t.title}`);
               await wnbhby()
+            }else if(t.type==8){//广告金币
+              console.log(`广告金币`);
+              await wnbqd()
+              await $.wait(61000);
             }
           }, undefined)
         }
