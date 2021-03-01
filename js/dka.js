@@ -149,7 +149,17 @@ let tm = ''
   .catch((e) => $.logErr(e))
   .finally(() => $.done())
 //蛋咖数据获取
-function dkack() {
+function dkack() {  
+ if ($request.url.indexOf("rpads/score") > -1) {
+ const dkaxsurl = $request.url
+  if(dkaxsurl)     $.setdata(dkaxsurl,`dkaxsurl${status}`)
+    $.log(dkaxsurl)
+  const dkaxshd = JSON.stringify($request.headers)
+        if(dkaxshd)    $.setdata(dkaxshd,`dkaxshd${status}`)
+$.log(dkaxshd)
+   $.msg($.name,"",'蛋咖'+`${status}` +'小说数据获取成功！')
+   return
+  }
    if ($request.url.indexOf("IFS/BaseData/GetUserInfo.ashx") > -1 && $request.body.indexOf("keycode") > -1) {
  const dkabody = $request.body
   if(dkabody)     $.setdata(dkabody,`dkabody${status}`)
@@ -200,15 +210,6 @@ $.log(dkakkzhd)
   if(dkaxwbody)     $.setdata(dkaxwbody,`dkaxwbody${status}`)
     $.log(dkaxwbody)
    $.msg($.name,"",'蛋咖'+`${status}` +'新闻数据数据获取成功！')
-  }
- if ($request.url.indexOf("rpads/score") > -1) {
- const dkaxsurl = $request.url
-  if(dkaxsurl)     $.setdata(dkaxsurl,`dkaxsurl${status}`)
-    $.log(dkaxsurl)
-  const dkaxshd = JSON.stringify($request.headers)
-        if(dkaxshd)    $.setdata(dkaxshd,`dkaxshd${status}`)
-$.log(dkaxshd)
-   $.msg($.name,"",'蛋咖'+`${status}` +'小说数据获取成功！')
   }
 }
 
