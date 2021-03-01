@@ -75,6 +75,7 @@ await wnbtj();
   .finally(() => $.done())
 //蜗牛吧数据
 function wnbck() {
+  $.log('蜗牛吧ck')
    if ($request.url.indexOf("receiveSystem") > -1){
     $.setdata($request.url,'wnburl')
     //$.log(wnburl)
