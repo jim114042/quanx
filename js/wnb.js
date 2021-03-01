@@ -148,13 +148,14 @@ function wnbhb(timeout = 0) {
         if(result.code == 200){
           console.log('\n\n蜗牛吧获取红包列表成功')
           let l = result.result
-          l.forEach(async (t)=>{
+          l.reduce(async (m ,t)=>{
+            await m
             if(t.type==2){
               console.log(`${t.hbId} --- ${t.title}`);
               await $.wait(1000);
               await wnbtj2(t)
             }
-          })
+          }, undefined)
         }
         if(result.code == 400 || result.code == 411){
           console.log('\n蜗牛吧获取红包列表失败: '+result.msg)}
