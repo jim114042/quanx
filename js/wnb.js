@@ -127,7 +127,7 @@ function wnbhb(timeout = 0) {
         if(result.code == 200){
           console.log('\n\n蜗牛吧获取红包列表成功')
           let l = result.result
-          l.reduce(async (m ,t)=>{
+          await l.reduce(async (m ,t)=>{
             await m
             if(t.type==2){
               console.log(`${t.hbId} --- ${t.title}`);
