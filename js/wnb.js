@@ -134,6 +134,7 @@ function wnbhb(timeout = 0) {
               await $.wait(1000);
               await wnbtj2(t)
             }else if(t.type==7){//城市红包雨
+              console.log(`${t.title}`);
               await wnbhby()
             }
           }, undefined)
