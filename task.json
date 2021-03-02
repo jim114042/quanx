@@ -2,6 +2,7 @@
   "name": "QuanX Task-Jim114042",
   "description": "收集各个圈x脚本作者的task库，感谢各位大佬的辛勤付出",
   "task": [
+    "11 8 * * * https://raw.githubusercontent.com/Sunert/Scripts/master/Task/weibo.js, tag=微博&钱包, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/weibo.png, enabled=true",
     "15 12,14,16,20,22 * * * https://raw.githubusercontent.com/age174/-/main/ysm.js, tag=云扫码, img-url=https://s3.ax1x.com/2021/02/28/6CRWb8.jpg, enabled=true",
     "15 12,14,16,20,22 * * * https://raw.githubusercontent.com/jim114042/quanx/main/js/ysm.js, tag=云扫码_m, img-url=https://s3.ax1x.com/2021/02/28/6CRWb8.jpg, enabled=true",
     "15 12,14,16,20 * * * https://raw.githubusercontent.com/jim114042/quanx/main/js/fqkk.js, tag=番茄看看_m, img-url=https://ftp.bmp.ovh/imgs/2021/02/f8306006536eb49c.jpeg, enabled=true",
