@@ -179,7 +179,7 @@ let url = {
     //const result = JSON.parse(data)
        console.log('\n番茄看看key提交成功,即将开始领取阅读奖励') 
        
-        await $.wait(randomNum(15000,30000);
+        await $.wait(randomNum(15000,30000));
         await fqkk3(); 
        
         }} catch (e) {
