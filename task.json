@@ -3,6 +3,7 @@
   "description": "收集各个圈x脚本作者的task库，感谢各位大佬的辛勤付出",
   "task": [
     "15 12,14,16,20,22 * * * https://raw.githubusercontent.com/age174/-/main/ysm.js, tag=云扫码, img-url=https://s3.ax1x.com/2021/02/28/6CRWb8.jpg, enabled=true",
+    "15 12,14,16,20,22 * * * https://raw.githubusercontent.com/jim114042/quanx/main/js/ysm.js, tag=云扫码_m, img-url=https://s3.ax1x.com/2021/02/28/6CRWb8.jpg, enabled=true",
     "15 12,14,16,20 * * * https://raw.githubusercontent.com/age174/-/main/dka.js, tag=蛋咖, img-url=https://s3.ax1x.com/2021/02/28/6C3Gpn.jpg, enabled=true",
     "15 12 * * * https://raw.githubusercontent.com/age174/-/main/yyxs.js, tag=阅友小说, img-url=https://s3.ax1x.com/2021/02/27/6pouiF.jpg, enabled=true",
     "15,35 0,12 * * * https://raw.githubusercontent.com/age174/-/main/rxm.js, tag=任性猫, img-url=https://raw.githubusercontent.com/shoujiqiyuan/PokemonGOforQuanX/master/IconSet/Z005.png, enabled=true",
