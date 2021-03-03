@@ -1,15 +1,14 @@
 /*
 软件名称:番茄看看 微信扫描二维码打开
-更新时间：2021-02-27 @肥皂
+更新时间：2021-03-02 @肥皂
 脚本说明：番茄看看自动阅读 在大佬基础上调整优化
 脚本为自动完成番茄看看的阅读任务
 每日收益1.7元左右，可多号撸。提现秒到
 
 任务打开二维码地址 https://raw.githubusercontent.com/age174/-/main/3F545C70-389B-4155-ACB1-15B6FDA95501.jpeg
 
-可以去boxjs修改自动提现金额和循环次数
+可以去boxjs修改自动提现金额
 最低提现额度为0.3元，默认提现1元
-最多任务次数为100次，默认为25次运行一回
 
 本脚本以学习为主！
 首次运行脚本，会提示获取数据
@@ -27,8 +26,7 @@ TG电报群: https://t.me/hahaha8028
 已修改循环方式，方式循环方式为一直阅读，直到当前无任务可做自动停止
 
 2.27修复番茄看看因跟换域名无法获取数据的问题，自行更换重写和mitm
-
-3.2增加随机等待时间防黑
+3.2增加剩余阅读次数查询
 
 boxjs地址 :  
 
@@ -146,7 +144,7 @@ let url = {
            
     const result = JSON.parse(data)
         if(result.code == 0){
-        console.log('\n番茄看看领取阅读奖励回执:成功🌝 '+result.msg+'\n今日阅读次数: '+result.data.infoView.num+' 今日阅读奖励: '+result.data.infoView.score)
+        console.log('\n番茄看看领取阅读奖励回执:成功🌝 '+result.msg+'\n今日阅读次数: '+result.data.infoView.num+' 今日阅读奖励: '+result.data.infoView.score+'\n当前剩余可执行任务次数:'+result.data.infoView.rest)
         await fqkk1();
 } else {
        console.log('\n番茄看看领取阅读奖励回执:失败🚫 '+result.msg+'\n今日阅读次数: '+result.data.infoView.num+' 今日阅读奖励: '+result.data.infoView.score)
@@ -213,7 +211,7 @@ let url = {
           
     const result = JSON.parse(data)
         if(result.code == 0){
-        console.log('\n番茄看看获取key回执:成功🌝 开始第 '+fqjs+' 次循环💦')
+        console.log('\n番茄看看获取key回执:成功🌝 开始 循环观看💦')
         fqkey = result.data.jkey
         console.log(fqkey)
         await fqkk2();
