@@ -137,7 +137,7 @@ function fqkk3(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : "http://m."+fqkkurl.match(/m.(.*?)reada/)[1]+"reada/finishTask",
-        headers : JSON.parse(fqkkhd),
+        headers : JSON.parse(fqkkhd.replace('autoRead=',`readLastKey=${fqkey}; autoRead=`)),
         body : 'readLastKey='+fqkey,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -164,7 +164,7 @@ function fqkk2(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : "http://m."+fqkkurl.match(/m.(.*?)reada/)[1]+"reada/jump?key="+fqkey,
-        headers : JSON.parse(fqkkhd),
+        headers : JSON.parse(fqkkhd.replace('autoRead=',`readLastKey=${fqkey}; autoRead=`)),
        
 }      
       $.get(url, async (err, resp, data) => {
@@ -177,7 +177,7 @@ let url = {
     //const result = JSON.parse(data)
        console.log('\n番茄看看key提交成功,即将开始领取阅读奖励') 
        
-        await $.wait(randomNum(15000,30000));
+        await $.wait(randomNum(20000,30000));
         await fqkk3(); 
        
         }} catch (e) {
@@ -213,9 +213,9 @@ let url = {
         if(result.code == 0){
         console.log('\n番茄看看获取key回执:成功🌝 开始 循环观看💦')
         fqkey = result.data.jkey
-        console.log(fqkey)
+        console.log(fqkey)  
         await fqkk2();
-        await fqread();
+        // await fqread();
         await $.wait(randomNum(1000,3000));
         fqjs++
 } else {
