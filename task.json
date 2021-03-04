@@ -23,7 +23,8 @@
     "5 11 * * * https://raw.githubusercontent.com/Sunert/Scripts/master/Task/Youth_Read.js, tag=中青自动阅读, img-url=https://raw.githubusercontent.com/Orz-3/task/master/youth.png, enabled=false",
     "*/11 * * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads1.js, tag=企鹅阅读, enabled=true",
     "*/20 0-23 * * * https://gitee.com/hanfuxing/personal-collection/raw/master/QQReadSign.js, tag=QQ阅读APP, img-url=https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/QQread.png, enabled=false",
-    "*/15 * * * * https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/qczjspeed.js, tag=汽车之家极速版, img-url=https://raw.githubusercontent.com/Orz-3/task/master/qczj.png, enabled=false",
-    "*/10 */3 * * * https://raw.githubusercontent.com/Sunert/Scripts/master/Task/jukan.js, tag=聚看点, img-url=https://raw.githubusercontent.com/Sunert/Profiles/master/QuantumultX/Rules/Images/icon/jukan.png, enabled=true"
+    "*/15 * * * * https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/qczjspeed.js, tag=汽车之家极速版, img-url=https://raw.githubusercontent.com/Orz-3/task/master/qczj.png, enabled=false",
+    "*/10 */3 * * * https://raw.githubusercontent.com/Sunert/Scripts/master/Task/jukan.js, tag=聚看点, img-url=https://raw.githubusercontent.com/Sunert/Profiles/master/QuantumultX/Rules/Images/icon/jukan.png, enabled=true",
+    "*/10 0-23 * * * https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/iboxpay.js, tag=笑谱, img-url=https://raw.githubusercontent.com/r0ckrise/Scripts/master/QuantumultX/icons/iboxpay.png",
   ]
 }
