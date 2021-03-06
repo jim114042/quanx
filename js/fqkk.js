@@ -142,7 +142,7 @@ function fqkk3(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : "http://m."+fqkkurl.match(/m.(.*?)reada/)[1]+"read" + fqkkt + "/finishTask",
-        headers : JSON.parse(fqkkhd.replace('autoRead=',`readLastKey=${fqkey}; autoRead=`)),
+        headers : JSON.parse(fqkkhd.replace('autoRead=',`readLastKey=${fqkey}; autoRead=`).replace(/reada/g,'read'+fqkkt)),
         body : 'readLastKey='+fqkey,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -174,7 +174,7 @@ function fqkk2(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : "http://m."+fqkkurl.match(/m.(.*?)reada/)[1]+"read" + fqkkt + "/jump?key="+fqkey,
-        headers : JSON.parse(fqkkhd.replace('autoRead=',`readLastKey=${fqkey}; autoRead=`)),
+        headers : JSON.parse(fqkkhd.replace('autoRead=',`readLastKey=${fqkey}; autoRead=`).replace(/reada/g,'read'+fqkkt)),
        
 }      
       $.get(url, async (err, resp, data) => {
@@ -214,7 +214,7 @@ let fqjs = 1
 
 let url = {
         url : "http://m."+fqkkurl.match(/m.(.*?)reada/)[1]+"read" + fqkkt + "/getTask",
-        headers : JSON.parse(fqkkhd),
+        headers : JSON.parse(fqkkhd.replace(/reada/g,'read'+fqkkt)),
         body : '',}
       $.post(url, async (err, resp, data) => {
         try {
@@ -247,7 +247,7 @@ function fqkktx(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : "http://m."+fqkkurl.match(/m.(.*?)reada/)[1]+"withdrawal/doWithdraw",
-        headers : JSON.parse(fqkkhd),
+        headers : JSON.parse(fqkkhd.replace(/reada/g,'read'+fqkkt)),
         body : 'amount='+fqtx,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -275,7 +275,7 @@ function fqread(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : "http://m."+fqkkurl.match(/m.(.*?)reada/)[1]+"read" + fqkkt + "/toRead?sign="+fqkey+"&for=",
-        headers : JSON.parse(fqkkhd),
+        headers : JSON.parse(fqkkhd.replace(/reada/g,'read'+fqkkt)),
    }
       $.get(url, async (err, resp, data) => {
         try {
