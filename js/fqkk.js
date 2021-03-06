@@ -94,7 +94,7 @@ let fqtx = ($.getval('fqtx') || '100');  // 此处修改提现金额，0.3元等
           fqkkhd = fqkkhdArr[i];
           $.index = i + 1;
           console.log(`\n开始【番茄看看${$.index}】`)
-    await fqkk0();
+    await fqkk3();
 
   }
   await fqkktx();
@@ -229,33 +229,6 @@ console.log('番茄看看获取key回执:失败🚫 '+result.msg+' 已停止当�
           resolve()
         }
       })
-    },timeout)
-  })
-}
-
-//番茄看看url     
-function fqkk0(timeout = 0) {
-  return new Promise((resolve) => {
-let url = {
-        url : "http://m.cwggkj.cn/r?upuid=3950781"
-       
-}      
-      $.get(url, async (err, resp, data) => {
-        try {
-         console.log(JSON.stringify(resp))
-        if (err) {
-          console.log(`${$.name} 请求失败，请检查网路重试`)
-        } else {
-
-       console.log('\n番茄看看url获取成功,即将开始领取阅读奖励') 
-       
-        //await fqkk3(); 
-       
-        }} catch (e) {
-          //$.logErr(e, resp);
-        } finally {
-          resolve()
-        }
     },timeout)
   })
 }
