@@ -73,6 +73,7 @@ let fqkkurl = $.getdata('fqkkurl')
 let fqkkhd = $.getdata('fqkkhd')
 let fqkey = ''
 let fqtx = ($.getval('fqtx') || '100');  // 此处修改提现金额，0.3元等于30，默认为提现一元，也就是100
+let fqkkt='a'; //a:阅读A b阅读B
 
 !(async () => {
   if (typeof $request !== "undefined") {
@@ -94,8 +95,10 @@ let fqtx = ($.getval('fqtx') || '100');  // 此处修改提现金额，0.3元等
           fqkkhd = fqkkhdArr[i];
           $.index = i + 1;
           console.log(`\n开始【番茄看看${$.index}】`)
-    await fqkk3();
-
+          fqkkt='a'
+          await fqkk3();
+          fqkkt='b'
+          await fqkk3();
   }
   await fqkktx();
 }}
@@ -136,7 +139,7 @@ function randomNum(minNum, maxNum) {
 function fqkk3(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
-        url : "http://m."+fqkkurl.match(/m.(.*?)reada/)[1]+"reada/finishTask",
+        url : "http://m."+fqkkurl.match(/m.(.*?)reada/)[1]+"read" + fqkkt + "/finishTask",
         headers : JSON.parse(fqkkhd.replace('autoRead=',`readLastKey=${fqkey}; autoRead=`)),
         body : 'readLastKey='+fqkey,}
       $.post(url, async (err, resp, data) => {
@@ -165,7 +168,7 @@ let url = {
 function fqkk2(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
-        url : "http://m."+fqkkurl.match(/m.(.*?)reada/)[1]+"reada/jump?key="+fqkey,
+        url : "http://m."+fqkkurl.match(/m.(.*?)reada/)[1]+"read" + fqkkt + "/jump?key="+fqkey,
         headers : JSON.parse(fqkkhd.replace('autoRead=',`readLastKey=${fqkey}; autoRead=`)),
        
 }      
@@ -205,7 +208,7 @@ let fqjs = 1
 //console.log(fqkkurl.match(/m.(.*?)reada/)[1])
 
 let url = {
-        url : "http://m."+fqkkurl.match(/m.(.*?)reada/)[1]+"reada/getTask",
+        url : "http://m."+fqkkurl.match(/m.(.*?)reada/)[1]+"read" + fqkkt + "/getTask",
         headers : JSON.parse(fqkkhd),
         body : '',}
       $.post(url, async (err, resp, data) => {
@@ -266,7 +269,7 @@ let url = {
 function fqread(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
-        url : "http://m."+fqkkurl.match(/m.(.*?)reada/)[1]+"reada/toRead?sign="+fqkey+"&for=",
+        url : "http://m."+fqkkurl.match(/m.(.*?)reada/)[1]+"read" + fqkkt + "/toRead?sign="+fqkey+"&for=",
         headers : JSON.parse(fqkkhd),
    }
       $.get(url, async (err, resp, data) => {
