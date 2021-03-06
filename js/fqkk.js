@@ -94,10 +94,12 @@ let fqkkt='a'; //a:阅读A b阅读B
           fqkkurl = fqkkurlArr[i];
           fqkkhd = fqkkhdArr[i];
           $.index = i + 1;
-          console.log(`\n开始【番茄看看${$.index}】`)
-          fqkkt='a'
+          console.log(`\n开始【番茄看看${$.index}】`);
+          fqkkt='a';
+          fqkey = '';
           await fqkk3();
-          fqkkt='b'
+          fqkkt='b';
+          fqkey = '';
           await fqkk3();
   }
   await fqkktx();
