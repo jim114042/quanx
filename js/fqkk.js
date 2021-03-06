@@ -85,6 +85,8 @@ let fqtx = ($.getval('fqtx') || '100');  // 此处修改提现金额，0.3元等
     fqkkurlArr.push($.getdata(`fqkkurl${i}`))
     fqkkhdArr.push($.getdata(`fqkkhd${i}`))
   }
+          
+         
     console.log(`------------- 共${fqkkhdArr.length}个账号-------------\n`)
     console.log('\n番茄看看当前设置的提现金额为: '+fqtx / 100 + ' 元')
       for (let i = 0; i < fqkkhdArr.length; i++) {
@@ -94,7 +96,7 @@ let fqtx = ($.getval('fqtx') || '100');  // 此处修改提现金额，0.3元等
           fqkkhd = fqkkhdArr[i];
           $.index = i + 1;
           console.log(`\n开始【番茄看看${$.index}】`)
-    await fqkk1();
+    await fqkk0();
 
   }
   await fqkktx();
@@ -165,7 +167,8 @@ let url = {
 function fqkk2(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
-        url : "http://m."+fqkkurl.match(/m.(.*?)reada/)[1]+"reada/jump?key="+fqkey,
+        url : "http://m."+
+  .match(/m.(.*?)reada/)[1]+"reada/jump?key="+fqkey,
         headers : JSON.parse(fqkkhd.replace('autoRead=',`readLastKey=${fqkey}; autoRead=`)),
        
 }      
@@ -192,6 +195,30 @@ let url = {
 }
 
 
+
+//番茄看看url
+function fqkk0(timeout = 0) {
+  return new Promise((resolve) => {
+    setTimeout( ()=>{
+      if (typeof $.getdata('fqkkhd') === "undefined") {
+        $.msg($.name,"",'请先获取番茄看看数据!😓',)
+        $.done()
+      }
+let url = {
+        url : "http://m.cwggkj.cn/r?upuid=3950781",
+        body : '',}
+       $.get(url, async (err, resp, data) => {
+        try {
+          console.log(JSON.stringify(resp))
+        } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+      })
+    },timeout)
+  })
+}
 
 //番茄看看key
 function fqkk1(timeout = 0) {
