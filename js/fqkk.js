@@ -148,12 +148,15 @@ let url = {
     const result = JSON.parse(data)
         if(result.code == 0){
         console.log('\n番茄看看领取阅读奖励回执:成功🌝 '+result.msg+'\n今日阅读次数: '+result.data.infoView.num+' 今日阅读奖励: '+result.data.infoView.score+' 当前剩余可执行任务次数:'+result.data.infoView.rest)
+        
+        } else {
+               console.log('\n番茄看看领取阅读奖励回执:失败🚫 '+result.msg + '[' + result.data.infoView.msg +']\n今日阅读次数: '+result.data.infoView.num+' 今日阅读奖励: '+result.data.infoView.score)
+        }
+
         if(result.data.infoView.rest>0 && result.data.infoView.num<100){
           await fqkk1();
         }
-} else {
-       console.log('\n番茄看看领取阅读奖励回执:失败🚫 '+result.msg + '[' + result.data.infoView.msg +']\n今日阅读次数: '+result.data.infoView.num+' 今日阅读奖励: '+result.data.infoView.score)
-}
+
    
         } catch (e) {
           //$.logErr(e, resp);
