@@ -110,7 +110,7 @@ let fqkkt='a'; //a:阅读A b阅读B
   .finally(() => $.done())
 //番茄看看数据获取
 function fqkkck() {
-   if ($request.url.indexOf("getTask") > -1) {
+   if ($request.url.indexOf("getTask") > -1 || $request.url.indexOf("finishTask") > -1) {
  const fqkkurl = $request.url
   if(fqkkurl)     $.setdata(fqkkurl,`fqkkurl${status}`)
     $.log(fqkkurl)
