@@ -2,6 +2,7 @@
   "name": "QuanX Task-Jim114042",
   "description": "收集各个圈x脚本作者的task库，感谢各位大佬的辛勤付出",
   "task": [
+    "50 12 * * * https://raw.githubusercontent.com/age174/-/main/yggy.js, tag=阳光果园, img-url=https://s3.ax1x.com/2021/02/06/yYzeWn.png, enabled=true",
     "15 17 * * * https://github.com/jim114042/quanx/raw/main/js/xmsports.js, tag=小米运动, img-url=https://raw.githubusercontent.com/58xinian/icon/master/xmyd.png, enabled=true",
     "0 8,12 * * *  http://raw.githubusercontent.com/ziye11/JavaScript/main/Task/ymzhuan.js, tag=羊毛赚ziye, img-url=https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/ymzhuan.png, enabled=true",
     "8 8-17/1 * * * https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/xiaole.js, tag=小乐优券, img-url=https://raw.githubusercontent.com/r0ckrise/Scripts/master/QuantumultX/icons/xlyq.png",
