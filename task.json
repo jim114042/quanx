@@ -1,5 +1,5 @@
 {
-  "name": "QuanX Task-Jim114042",
+  "name": "QuanX Task-ZG",
   "description": "收集各个圈x脚本作者的task库，感谢各位大佬的辛勤付出",
   "task": [
     "*/20 * * * * https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/pyq.js, tag=评友圈, img-url=https://gitee.com/ydj0602/hym/raw/img/pyq1.PNG, enabled=true",
