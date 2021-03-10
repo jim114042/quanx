@@ -2,6 +2,8 @@
   "name": "QuanX Task-ZG",
   "description": "收集各个圈x脚本作者的task库，感谢各位大佬的辛勤付出",
   "task": [
+    "20 12,15 * * * https://raw.githubusercontent.com/age174/-/main/xyzd.js, tag=幸运赚点, img-url=https://ae01.alicdn.com/kf/U1680ecdfa17544669c71e00400c542e31.jpg, enabled=true",
+    "15 13,15 * * * https://raw.githubusercontent.com/age174/-/main/hldsp.js, tag=哈喽短视频, img-url=https://ae01.alicdn.com/kf/Uda8ecbbe50444fe293b538cbccf9d719q.jpg, enabled=true",
     "*/20 * * * * https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/pyq.js, tag=评友圈, img-url=https://gitee.com/ydj0602/hym/raw/img/pyq1.PNG, enabled=true",
     "0,30 5-22 * * * https://raw.githubusercontent.com/jim114042/ziye/tongbu/Task/bububao.js, tag=步步宝, img-url=https://qxzy.top/rules/QuantumultX/img/bbb.png, enabled=true",
     "10 5-23 * * * https://raw.githubusercontent.com/jim114042/ziye/tongbu/Task/zhima.js, tag=芝嫲视频, img-url= https://s3.ax1x.com/2021/02/06/yYzeWn.png, enabled=true",
