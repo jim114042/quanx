@@ -90,7 +90,7 @@ function getCookies() {
     $.cookieArr = Object.values(jdCookieNode);
   } else {
     const CookiesJd = JSON.parse($.getdata("CookiesJD") || "[]").filter(x => !!x).map(x => x.cookie);
-    $.cookieArr = [$.getdata("CookieJD") || "", $.getdata("CookieJD2") || "", ...CookiesJd];
+    $.cookieArr = [$.getdata("CookieJD") || "", $.getdata("CookieJD2") || "", ...CookiesJd].filter(item=>!!item);
   }
   if (!$.cookieArr[0]) {
     $.msg(
