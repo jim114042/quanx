@@ -26,6 +26,7 @@ $.currentToken = {};
 $.strPhoneID = '';
 $.strPgUUNum = '';
 $.userName = '';
+$.ok=false;
 
 !(async () => {
   if (!getCookies()) return;
@@ -33,11 +34,14 @@ $.userName = '';
   for (let i = 0; i < $.cookieArr.length; i++) {
     $.currentCookie = $.cookieArr[i];
     $.currentToken = $.tokenArr[i];
+    $.ok=false;
     if ($.currentCookie) {
       $.userName =  decodeURIComponent($.currentCookie.match(/pt_pin=(.+?);/) && $.currentCookie.match(/pt_pin=(.+?);/)[1]);
       $.log(`\n开始【京东账号${i + 1}】${$.userName}`);
-      
-      await cashOut();
+      for(let j=0;j<=10 && !$.ok;j++){
+        await cashOut();
+        $.wait(1000);
+      }
     }
   }
   await showMsg();
@@ -57,6 +61,7 @@ function cashOut() {
           $.log(data);
           const { iRet, sErrMsg } = JSON.parse(data);
           $.log(sErrMsg);
+          $.ok=sErrMsg == ""
           $.result.push(`【${$.userName}】\n ${sErrMsg == "" ? sErrMsg="今天手气太棒了" : sErrMsg}`);
           resolve(sErrMsg);
         } catch (e) {
