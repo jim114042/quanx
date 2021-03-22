@@ -13,21 +13,24 @@
 
   # quanx
   [rewrite_local]
-  ^https\:\/\/wq\.jd\.com\/cubeactive\/farm\/dotask url script-request-header https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js
-  ^https\:\/\/m\.jingxi\.com\/dreamfactory\/generator\/CollectCurrentElectricity url script-request-header https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js
-  ^https\:\/\/m\.jingxi\.com\/jxcfd\/consume\/CashOut url script-request-header https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js
+  ^https\:\/\/wq\.jd\.com\/cubeactive\/farm\/dotask url script-request-header https://raw.githubusercontent.com/jim114042/quanx/main/js/jxtoken.js
+  ^https\:\/\/wq\.jd\.com\/dreamfactory\/generator\/CollectCurrentElectricity url script-request-header https://raw.githubusercontent.com/jim114042/quanx/main/js/jxtoken.js
+  ^https\:\/\/m\.jingxi\.com\/dreamfactory\/generator\/CollectCurrentElectricity url script-request-header https://raw.githubusercontent.com/jim114042/quanx/main/js/jxtoken.js
+  ^https\:\/\/m\.jingxi\.com\/jxcfd\/consume\/CashOut url script-request-header https://raw.githubusercontent.com/jim114042/quanx/main/js/jxtoken.js
 
   # loon
   [Script]
-  http-request ^https\:\/\/wq\.jd\.com\/cubeactive\/farm\/dotask script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js, requires-body=false, timeout=10, tag=京喜token
-  http-request ^https\:\/\/m\.jingxi\.com\/dreamfactory\/generator\/CollectCurrentElectricity script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js, requires-body=false, timeout=10, tag=京喜token
-  http-request ^^https\:\/\/m\.jingxi\.com\/jxcfd\/consume\/CashOut script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js, requires-body=false, timeout=10, tag=京喜token
+  http-request ^https\:\/\/wq\.jd\.com\/cubeactive\/farm\/dotask script-path=https://raw.githubusercontent.com/jim114042/quanx/main/js/jxtoken.js, requires-body=false, timeout=10, tag=京喜token
+  http-request ^https\:\/\/wq\.jd\.com\/dreamfactory\/generator\/CollectCurrentElectricity script-path=https://raw.githubusercontent.com/jim114042/quanx/main/js/jxtoken.js, requires-body=false, timeout=10, tag=京喜token
+  http-request ^https\:\/\/m\.jingxi\.com\/dreamfactory\/generator\/CollectCurrentElectricity script-path=https://raw.githubusercontent.com/jim114042/quanx/main/js/jxtoken.js, requires-body=false, timeout=10, tag=京喜token
+  http-request ^^https\:\/\/m\.jingxi\.com\/jxcfd\/consume\/CashOut script-path=https://raw.githubusercontent.com/jim114042/quanx/main/js/jxtoken.js, requires-body=false, timeout=10, tag=京喜token
 
   # surge
   [Script]
-  京喜token = type=http-request,pattern=^https\:\/\/wq\.jd\.com\/cubeactive\/farm\/dotask,requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js
-  京喜token = type=http-request,pattern=^https\:\/\/m\.jingxi\.com\/dreamfactory\/generator\/CollectCurrentElectricity,requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js
-  京喜token = type=http-request,pattern=^https\:\/\/m\.jingxi\.com\/jxcfd\/consume\/CashOut,requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js
+  京喜token = type=http-request,pattern=^https\:\/\/wq\.jd\.com\/cubeactive\/farm\/dotask,requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/jim114042/quanx/main/js/jxtoken.js
+  京喜token = type=http-request,pattern=^https\:\/\/wq\.jd\.com\/dreamfactory\/generator\/CollectCurrentElectricity,requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/jim114042/quanx/main/js/jxtoken.js
+  京喜token = type=http-request,pattern=^https\:\/\/m\.jingxi\.com\/dreamfactory\/generator\/CollectCurrentElectricity,requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/jim114042/quanx/main/js/jxtoken.js
+  京喜token = type=http-request,pattern=^https\:\/\/m\.jingxi\.com\/jxcfd\/consume\/CashOut,requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/jim114042/quanx/main/js/jxtoken.js
  *
  **/
 
@@ -35,7 +38,8 @@ const jxNcTokenKey1 = 'jxnc_token1';
 const jxNcTokenKey2 = 'jxnc_token2';
 const jxTokens = 'jx_tokens';
 const ncTokenRegex = /^https\:\/\/wq\.jd\.com\/cubeactive\/farm\/dotask/;
-const gcTokenRegex = /^https\:\/\/m\.jingxi\.com\/dreamfactory\/generator\/CollectCurrentElectricity/;
+const gcTokenRegex = /^https\:\/\/wq\.jd\.com\/dreamfactory\/generator\/CollectCurrentElectricity/;
+const gcTokenRegex2 = /^https\:\/\/m\.jingxi\.com\/dreamfactory\/generator\/CollectCurrentElectricity/;
 const cfdTokenRegex = /^https\:\/\/m\.jingxi\.com\/jxcfd\/consume\/CashOut/;
 const $ = new Env('京喜token');
 
@@ -67,7 +71,7 @@ if (ncTokenRegex.test(url)) {
   }
 }
 
-if (gcTokenRegex.test(url)) {
+if (gcTokenRegex.test(url) || gcTokenRegex2.test(url)) {
   try {
     const query = url.split('?')[1];
     const params = query.split('&');
