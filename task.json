@@ -2,6 +2,7 @@
   "name": "QuanX Task-ZG",
   "description": "收集各个圈x脚本作者的task库，感谢各位大佬的辛勤付出",
   "task": [
+    "1 */5 * * * https://raw.githubusercontent.com/Sunert/Scripts/master/Task/txnews.js, tag=腾讯新闻",
     "12 8-22/2 * * * https://raw.githubusercontent.com/jim114042/ziye/tongbu/Task/flw.js, tag=返利网, img-url= https://raw.githubusercontent.com/jim114042/ziye/tongbu/Task/flw.png , enabled=true",
     "*/20 10-23 * * * https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/kkd.js, tag=快看点, img-url=https://raw.githubusercontent.com/Dean12321/qx_scripts/main/36.KuaiKanDian/kkd.png, enabled=true",
     "20 * * * * https://raw.githubusercontent.com/jim114042/ziye/tongbu/Task/ddayd.js, tag=多多爱运动, img-url=https://ae01.alicdn.com/kf/U428ddcb68e304bc0822743cad88f5142n.jpg, enabled=true",
