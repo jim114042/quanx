@@ -2,6 +2,7 @@
   "name": "QuanX Task-ZG",
   "description": "收集各个圈x脚本作者的task库，感谢各位大佬的辛勤付出",
   "task": [
+    "1 0 * * * https://raw.githubusercontent.com/zZPiglet/Task/master/elem/elemCheckIn.js, tag=饿了么-打卡领红包, img-url=https://qxzy.top/rules/QuantumultX/img/elem.png, enabled=true",
     "0-59 9,12,22 * * * https://raw.githubusercontent.com/jim114042/age174/tongbu/shq.js, tag=生活圈, img-url=https://ftp.bmp.ovh/imgs/2021/04/e2b32e2eb2ad0cd3.png, enabled=true",
     "*/30 8-23 * * * lhws.js, tag=落花无生, img-url=https://ae01.alicdn.com/kf/U7f67ec3bd2d848a59d72a1807dc9e324r.jpg, enabled=true",
     "15 9, * * * https://raw.githubusercontent.com/age174/-/main/vsh.js, tag=V生活, img-url=https://ae01.alicdn.com/kf/Uf0da879c7acd4c7bad91f0e5a97667e1O.jpg, enabled=true",
