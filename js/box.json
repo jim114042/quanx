@@ -1,9 +1,9 @@
 {
-	"id": "syzzzf.app.sub",
-	"name": "syzzzf应用订阅",
-	"author": "@syzzzf",
+	"id": "ZG.app.sub",
+	"name": "ZG应用订阅",
+	"author": "@ZG",
 	"icon": "",
-	"repo": "https://github.com/songyangzz/QuantumultX",
+	"repo": "https://github.com/jim114042/quanx",
 	"apps": [
 		{
 			"id": "elemSign",
@@ -11,8 +11,8 @@
 			"keys": [
 				"cookie_elem"
 			],
-			"author": "@syzzzf",
-			"repo": "https://raw.githubusercontent.com/songyangzz/QuantumultX/master/elem/elemSign.js",
+			"author": "@ZG",
+			"repo": "https://raw.githubusercontent.com/zZPiglet/Task/master/elem/elemCheckIn.js",
 			"icons": [
 				"https://raw.githubusercontent.com/Orz-3/mini/master/elem.png",
 				"https://raw.githubusercontent.com/Orz-3/task/master/elem.png"
