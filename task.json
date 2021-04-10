@@ -2,6 +2,7 @@
   "name": "QuanX Task-ZG",
   "description": "收集各个圈x脚本作者的task库，感谢各位大佬的辛勤付出",
   "task": [
+    "*/30 * * * * https://raw.githubusercontent.com/xl2101200/-/main/keep.js, tag=keep打卡浇水, enabled=true",
     "0 8 * * * https://raw.githubusercontent.com/xl2101200/-/main/pxx.js, tag=拼夕夕, enabled=true",
     "1 0 * * * https://raw.githubusercontent.com/songyangzz/QuantumultX/master/elem/elemSign.js, tag=饿了么-签到翻牌, img-url=https://qxzy.top/rules/QuantumultX/img/elem.png, enabled=true",
     "1 0 * * * https://raw.githubusercontent.com/zZPiglet/Task/master/elem/elemCheckIn.js, tag=饿了么-打卡领红包, img-url=https://qxzy.top/rules/QuantumultX/img/elem.png, enabled=true",
