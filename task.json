@@ -2,7 +2,6 @@
   "name": "QuanX Task-ZG",
   "description": "收集各个圈x脚本作者的task库，感谢各位大佬的辛勤付出",
   "task": [
-    "1 0 * * * https://raw.githubusercontent.com/age174/-/main/blnc.js, tag=部落农场, img-url=https://ae01.alicdn.com/kf/U7bcabce8ea7644f18e3c84f65907e34bf.jpg, enabled=true",
     "6 6 0-23 * * * https://raw.githubusercontent.com/jim114042/ziye/tongbu/Task/jdtq.js, tag=简单天气, enabled=true",
     "5,35 8-23 * * * https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/jrtt.js, tag=今日头条极速版, enabled=true",
     "0 8 * * * https://raw.githubusercontent.com/xl2101200/-/main/nmm.js, tag=牛蒙蒙, enabled=true",
