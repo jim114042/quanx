@@ -142,7 +142,7 @@ await wcydyd();
   }
 }
         } catch (e) {
-          //$.logErr(e, resp);
+          $.logErr(e, resp);
         } finally {
           resolve()
         }
