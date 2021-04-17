@@ -134,7 +134,7 @@ await $.wait(9000);
 await wcydlb();      
 await wcydyd();
 } else {
-  if(result.msg.indexOf('检测账号')){
+  if(result.msg.indexOf('检测账号')!=-1){
      $.msg($.name,"",'文创阅读获取任务信息失败'+result.msg)
   }else{
     //$.msg($.name,"",'文创阅读获取任务信息失败'+result.msg)
