@@ -137,7 +137,7 @@ await wcydyd();
   if(result.msg.indexOf('检测账号')){
      $.msg($.name,"",'文创阅读获取任务信息失败'+result.msg)
   }else{
-    $.msg($.name,"",'文创阅读获取任务信息失败'+result.msg)
+    //$.msg($.name,"",'文创阅读获取任务信息失败'+result.msg)
     await wcyd2();
   }
 }
