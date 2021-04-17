@@ -142,7 +142,8 @@ await wcydyd();
   }
 }
         } catch (e) {
-          $.logErr(e, resp);
+          $.msg($.name,"",'文创阅读访问出错')
+          //$.logErr(e, resp);
         } finally {
           resolve()
         }
