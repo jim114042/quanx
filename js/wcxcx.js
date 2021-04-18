@@ -86,13 +86,13 @@ function execTask(ac, i) {
             $.log(`😄账号${ac.no}开始打开第${++count}个小程序：${task.id}`)
             ac.execNum = count
             let openRt = await postApi(ac.url.replace('getUserByToken', 'openWxMini'), {headers: ac.headers, body: ac.body}, `&id=${task.id}`)
-            if (openRt && openRt.code == 1) {
+            if (openRt && openRt.code == 0) {
               let time = parseInt(Math.random() * (9 - 6 + 1) + 6, 10)
               $.log(`🌝账号${ac.no}等待${time}秒后提交第${count}个小程序任务`)
               await $.wait(time * 1000)
               openRt = await postApi(ac.url.replace('getUserByToken', 'openedWxMini'), {headers: ac.headers, body: ac.body})
             } else {
-              $.log(`😂账号${ac.no}打开第${count}个小程序失败：\n${JSON.stringify(openRt, null, 2)}`)
+              $.msg($.name,"",`😂账号${ac.no}打开第${count}个小程序失败：\n${JSON.stringify(openRt, null, 2)}`)
             }
           }
           if (count > 0) {
