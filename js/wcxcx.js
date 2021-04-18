@@ -105,7 +105,7 @@ function execTask(ac, i) {
           ac.amount = '获取失败'
         }
       } else {
-        $.logErr(`🚫账号${ac.no}：token无效，请重新抓包后再试`)
+        $.msg($.name,"",`🚫账号${ac.no}：token无效，请重新抓包后再试`)
       }
     } catch (e) {
       $.logErr(`账号${ac.no} 循环执行任务出现异常: ${e}`)
