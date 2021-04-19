@@ -21,7 +21,7 @@
     "*/6 6-23 * * * https://raw.githubusercontent.com/jim114042/quanx/main/js/wcxcx.js, tag=文创阅读小程序, img-url=https://ae01.alicdn.com/kf/Ua6bd9417d492473f8ca0c3110b2176307.jpg, enabled=true",
     "12 8-22/2 * * * https://raw.githubusercontent.com/jim114042/ziye/tongbu/Task/flw.js, tag=返利网, img-url= https://raw.githubusercontent.com/jim114042/ziye/tongbu/Task/flw.png , enabled=true",
     "*/15 10-23 * * * https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/kkd.js, tag=快看点, img-url=https://raw.githubusercontent.com/Dean12321/qx_scripts/main/36.KuaiKanDian/kkd.png, enabled=true",
-    "20 * * * * https://raw.githubusercontent.com/jim114042/ziye/tongbu/Task/ddayd.js, tag=多多爱运动, img-url=https://ae01.alicdn.com/kf/U428ddcb68e304bc0822743cad88f5142n.jpg, enabled=true",
+    "20 * * * * https://raw.githubusercontent.com/jim114042/quanx/main/js/ddayd.js, tag=多多爱运动, img-url=https://ae01.alicdn.com/kf/U428ddcb68e304bc0822743cad88f5142n.jpg, enabled=true",
     "30 10 * * * https://raw.githubusercontent.com/age174/-/main/yqzh.js, tag=悦趣阅读, img-url=https://ae01.alicdn.com/kf/U428ddcb68e304bc0822743cad88f5142n.jpg, enabled=true",
     "0,30 8-23 * * * https://raw.githubusercontent.com/age174/-/main/hlyy.js, tag=葫芦音乐, img-url=https://ae01.alicdn.com/kf/U49d941738c0c41569f7db55825943375f.jpg, enabled=true",
     "5,35 9-22 * * * https://raw.githubusercontent.com/age174/-/main/smz.js, tag=睡眠赚无限刷, img-url=https://ae01.alicdn.com/kf/Uaade4566dd3744299956aa883f225386u.jpg, enabled=true",
