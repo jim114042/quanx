@@ -5,7 +5,6 @@
     "0 0/4 * * * https://raw.githubusercontent.com/xl2101200/-/main/zb.js, tag=左边, enabled=true",
     "20,50 0-23 * * * https://raw.githubusercontent.com/age174/-/main/jjrm.js, tag=久金人脉, img-url=https://ae01.alicdn.com/kf/Uf3f262fb6d81492a8e350a0bb97a04a0g.jpg, enabled=true",
     "35 9 * * * https://raw.githubusercontent.com/jim114042/AutoSyncScript/feizao/zzsy.js, tag=招招试药, img-url=https://ae01.alicdn.com/kf/Ub0056a0721e94c9a85a8bbeb2f2aed6fn.jpg, enabled=true",
-    "7,27 7-20 * * * https://raw.githubusercontent.com/jim114042/ziye/tongbu/Task/yqnb.js, tag=易趣牛帮, enabled=true",
     "6 0-23 * * * https://raw.githubusercontent.com/jim114042/ziye/tongbu/Task/jdtq.js, tag=简单天气, enabled=true",
     "5,35 8-23 * * * https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/jrtt.js, tag=今日头条极速版, enabled=true",
     "0 8 * * * https://raw.githubusercontent.com/xl2101200/-/main/nmm.js, tag=牛蒙蒙, enabled=true",
