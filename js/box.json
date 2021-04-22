@@ -87,7 +87,7 @@
             "script": "https://raw.githubusercontent.com/xl2101200/-/main/nmm.js"
     },
   {
-    "id": "dyjsb",
+    "id": "dyjsbzc",
     "name": "抖音极速版",
     "keys": ["signheader", "signcookie", "stepheader", "stepkey", "readheader", "readkey", "bx1header", "bx1key", "bx2header", "bx2key","signheader2", "signcookie2", "stepheader2", "stepkey2", "readheader2", "readkey2", "bx1header2", "bx1key2", "bx2header2", "bx2key2"],
     "author": "@Ariszy",
