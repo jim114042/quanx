@@ -161,9 +161,9 @@
         "type": "number",
         "desc": "需要几个账号，数字为几"
       }],
-    "repo": "https://github.com/Ariszy/Private-Script/blob/master/Scripts/dyjsb.js",
+    "repo": "https://raw.githubusercontent.com/jim114042/quanx/main/js/dyjsb.js",
     "icons": ["https://raw.githubusercontent.com/Ariszy/Private-Script/master/img/dyjsb-mini.png", "https://raw.githubusercontent.com/Ariszy/Private-Script/master/img/dyjsb.png"],
-    "script": "https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/dyjsb.js"
+    "script": "https://raw.githubusercontent.com/jim114042/quanx/main/js/dyjsb.js"
     } 
   ]
 }
