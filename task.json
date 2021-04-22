@@ -47,7 +47,7 @@
     "15 17 * * * https://github.com/jim114042/quanx/raw/main/js/xmsports.js, tag=小米运动, img-url=https://raw.githubusercontent.com/58xinian/icon/master/xmyd.png, enabled=true",
     "15 0,6,12,18, * * * https://raw.githubusercontent.com/age174/-/main/xsmm.js, tag=悬赏喵喵, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/taskicon/Yunsaoma.png, enabled=true",
     "*/20 6-23 * * * https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/huoshan.js, tag=抖音火山版, img-url=https://gitee.com/ydj0602/hym/raw/img/DYHSB.PNG, enabled=true",
-    "5,35 8-23 * * * https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/dyjsb.js, tag=抖音极速版, img-url=https://raw.githubusercontent.com/Ariszy/Private-Script/master/img/dyjsb.png, enabled=true",
+    "5,35 8-23 * * * https://raw.githubusercontent.com/jim114042/quanx/main/js/dyjsb.js, tag=抖音极速版, img-url=https://raw.githubusercontent.com/Ariszy/Private-Script/master/img/dyjsb.png, enabled=true",
     "11 8 * * * https://raw.githubusercontent.com/Sunert/Scripts/master/Task/weibo.js, tag=微博&钱包, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/weibo.png, enabled=true",
     "15 12,14,16,20,22 * * * https://raw.githubusercontent.com/age174/-/main/ysm.js, tag=云扫码, img-url=https://s3.ax1x.com/2021/02/28/6CRWb8.jpg, enabled=true",
     "15,45 10-22 * * * https://raw.githubusercontent.com/jim114042/quanx/main/js/wnb.js, tag=蜗牛吧, img-url=https://ftp.bmp.ovh/imgs/2021/02/221a7d94eaa0dddf.jpeg, enabled=true",
