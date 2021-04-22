@@ -17,11 +17,15 @@ boxjs：https://raw.githubusercontent.com/Ariszy/Private-Script/master/Ariszy.bo
 hostname = *.amemv.com
 #圈x
 [rewrite local]
-luckycat/aweme/v1/task/sign_in/detail? url script-request-header https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/dyjsb.js
+luckycat/aweme/v1/task/sign_in/detail? url script-request-header https://raw.githubusercontent.com/jim114042/quanx/main/js/dyjsb.js
 
-luckycat/aweme/v1/task/done/read? url script-request-header https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/dyjsb.js
+luckycat/aweme/v1/task/done/read? url script-request-header https://raw.githubusercontent.com/jim114042/quanx/main/js/dyjsb.js
 
-luckycat/aweme/v1/task/walk/step_submit? - script-request-header https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/dyjsb.js
+luckycat/aweme/v1/task/walk/step_submit? - script-request-header https://raw.githubusercontent.com/jim114042/quanx/main/js/dyjsb.js
+
+luckycat/aweme/v1/task/done/excitation_ad_treasure_box? - script-request-header https://raw.githubusercontent.com/jim114042/quanx/main/js/dyjsb.js
+
+luckycat/aweme/v1/task/done/treasure_task? - script-request-header https://raw.githubusercontent.com/jim114042/quanx/main/js/dyjsb.js
 
 #loon
 http-request /luckycat/aweme/v1/task/sign_in/detail? script-path=https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/dyjsb.js, requires-body=true, timeout=10, tag=抖音极速版sign
@@ -181,6 +185,10 @@ Object.keys(readheader).forEach((item) => {
     stepkeyArr.push($.getdata('stepkey'))
     readheaderArr.push($.getdata('readheader'))
     readkeyArr.push($.getdata('readkey'))
+    bx1headerArr.push($.getdata('bx1header'))
+    bx1keyArr.push($.getdata('bx1key'))
+    bx2headerArr.push($.getdata('bx2header'))
+    bx2keyArr.push($.getdata('bx2key'))
     let dyjsbcount = ($.getval('dyjsbcount') || '1');
   for (let i = 2; i <= dyjsbcount; i++) {
     signheaderArr.push($.getdata(`signheader${i}`))
@@ -189,6 +197,10 @@ Object.keys(readheader).forEach((item) => {
     stepkeyArr.push($.getdata(`stepkey${i}`))
     readheaderArr.push($.getdata(`readheader${i}`))
     readkeyArr.push($.getdata(`readkey${i}`))
+    bx1headerArr.push($.getdata(`bx1header${i}`))
+    bx1keyArr.push($.getdata(`bx1key${i}`))
+    bx2headerArr.push($.getdata(`bx2header${i}`))
+    bx2keyArr.push($.getdata(`bx2key${i}`))
   }
 }
 !(async () => {
@@ -206,7 +218,13 @@ if (!signheaderArr[0]) {
       stepkey = stepkeyArr[i];
       readheader = readheaderArr[i];
       readkey = readkeyArr[i];
+      bx1header = bx1headerArr[i];
+      bx1key = bx1keyArr[i];
+      bx2header = bx2headerArr[i];
+      bx2key = bx2keyArr[i];
       dyjsbaccount = $.getval(`dyjsbaccount${i}`)
+      dyjsbzcaccount = $.getval(`dyjsbzcaccount${i}`)
+      dyjsbzcname = $.getval(`dyjsbzcname${i}`)
       $.index = i + 1;
       console.log(`\n开始【抖音极速版${$.index}】`)
       //await invite()
@@ -215,6 +233,11 @@ if (!signheaderArr[0]) {
       //await step_submit();
       //await step_reward();
       await watch_video()
+	    await $.wait(3000)
+      await watch_bx1()
+	    await $.wait(3000)
+      await watch_bx2()
+	    await $.wait(3000)
       await control()
       //await profit()
       await showmsg()
@@ -253,6 +276,32 @@ function GetCookie() {
 	  if(readkey)        $.setdata(readkey,`readkey${$.idx}`)
 	    $.log(`[${jsname}] 获取read请求: 成功,readkey: ${readkey}`)
 	    $.msg(`获取readkey: 成功🎉`, ``)
+    const dyhost = $request.headers['Host']
+    if(dyhost) $.setdata(dyhost,'dyhost')
+    $.log(`[${jsname}] 获取host请求: 成功,host: ${host}`)
+	 }
+ if($request&&$request.url.indexOf("aweme" && "done/treasure_task")>=0) {
+	  const readheader = $request.url.split(`?`)[1]
+	    if (readheader) $.setdata(readheader,`bx1header${$.idx}`)
+	    $.log(`[${jsname}] 获取bx1请求: 成功,bx1header: ${readheader}`)
+	    $.msg(`获取bx1header: 成功🎉`, ``)
+	   const readkey = JSON.stringify($request.headers)
+	  if(readkey)        $.setdata(readkey,`bx1key${$.idx}`)
+	    $.log(`[${jsname}] 获取bx1请求: 成功,bx1key: ${readkey}`)
+	    $.msg(`获取bx1key: 成功🎉`, ``)
+    const dyhost = $request.headers['Host']
+    if(dyhost) $.setdata(dyhost,'dyhost')
+    $.log(`[${jsname}] 获取host请求: 成功,host: ${host}`)
+	 }
+ if($request&&$request.url.indexOf("aweme" && "done/excitation_ad_treasure_box")>=0) {
+	  const readheader = $request.url.split(`?`)[1]
+	    if (readheader) $.setdata(readheader,`bx2header${$.idx}`)
+	    $.log(`[${jsname}] 获取bx2请求: 成功,bx2header: ${readheader}`)
+	    $.msg(`获取bx2header: 成功🎉`, ``)
+	   const readkey = JSON.stringify($request.headers)
+	  if(readkey)        $.setdata(readkey,`bx2key${$.idx}`)
+	    $.log(`[${jsname}] 获取bx2请求: 成功,bx2key: ${readkey}`)
+	    $.msg(`获取bx2key: 成功🎉`, ``)
     const dyhost = $request.headers['Host']
     if(dyhost) $.setdata(dyhost,'dyhost')
     $.log(`[${jsname}] 获取host请求: 成功,host: ${host}`)
@@ -375,6 +424,62 @@ return new Promise((resolve, reject) => {
     })
    })
   } 
+//时段宝箱1
+function watch_bx1() {
+return new Promise((resolve, reject) => {
+  let watch_videourl ={
+    url: `https://${dyhost}/luckycat/aweme/v1/task/done/treasure_task?${bx1header}`,
+    headers: JSON.parse(bx1key),
+    body: `{
+  "in_sp_time" : 0
+}`
+}
+   $.post(watch_videourl,(error, response, data) =>{
+     const result = JSON.parse(data)
+       if(logs) $.log(data)
+       message += '📣时段宝箱1\n'
+      if(result.err_no == 0) {
+          message +='🎉'+result.err_tips+'获得:'+result.data.amount+"\n"
+        }
+      else if(result.err_no == 10006){
+          message += '⚠️异常:已经读过了\n'
+      }
+      else{
+          message += '⚠️异常:'+result.err_tips+'\n'+'请重新获取bx1key\n'
+          let other = '⚠️异常:'+result.err_tips+'请重新获取bx1key\n'
+          $.msg(jsname,'',other)
+      }
+          resolve()
+    })
+   })
+  } 
+//时段宝箱2
+function watch_bx2() {
+return new Promise((resolve, reject) => {
+  let watch_videourl ={
+    url: `https://${dyhost}/luckycat/aweme/v1/task/done/excitation_ad_treasure_box?${bx2header}`,
+    headers: JSON.parse(bx2key),
+    body: ``
+}
+   $.post(watch_videourl,(error, response, data) =>{
+     const result = JSON.parse(data)
+       if(logs) $.log(data)
+       message += '📣时段宝箱2\n'
+      if(result.err_no == 0) {
+          message +='🎉'+result.err_tips+'获得:'+result.data.amount+"\n"
+        }
+      else if(result.err_no == 10006){
+          message += '⚠️异常:已经读过了\n'
+      }
+      else{
+          message += '⚠️异常:'+result.err_tips+'\n'+'请重新获取bx2key\n'
+          let other = '⚠️异常:'+result.err_tips+'请重新获取bx2key\n'
+          $.msg(jsname,'',other)
+      }
+          resolve()
+    })
+   })
+  } 
 function invitation() {
 return new Promise((resolve, reject) => {
   let invitatonurl ={
@@ -415,13 +520,12 @@ return new Promise((resolve, reject) => {
     url: `https://${dyhost}/luckycat/aweme/v1/wallet/take_cash?task_key=jiao_take_cash&${signheader}`,
     headers: JSON.parse(readkey),
     body: `{
-  "account" : "${dyjsbaccount}",
-  "is_auto" : false,
+  "account" : "${dyjsbzcaccount}",
   "take_cash_type" : 3,
   "tab_type" : "alipay",
   "in_sp_time" : 0,
   "cash_amount" : -30,
-  "name" : ""
+  "name" : "${dyjsbzcname}"
 }`
 }
 
