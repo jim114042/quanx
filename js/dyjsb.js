@@ -49,6 +49,8 @@ $.idx = ($.idx = ($.getval("dyjsbcount") || "1") - 1) > 0 ? `${$.idx + 1}` : "";
 const signheaderArr = [],signcookieArr=[]
 const stepheaderArr = [],stepkeyArr=[]
 const readheaderArr = [],readkeyArr=[]
+const bx1headerArr = [],bx1keyArr=[]
+const bx2headerArr = [],bx2keyArr=[]
 let signheader = $.getdata('signheader')
 let signcookie = $.getdata('signcookie')
 
@@ -58,8 +60,14 @@ let stepkey = $.getdata('stepkey')
 let readheader = $.getdata('readheader')
 let readkey = $.getdata('readkey')
 
+let bx1header = $.getdata('bx1header')
+let bx1key = $.getdata('bx1key')
+
+let bx2header = $.getdata('bx2header')
+let bx2key = $.getdata('bx2key')
+
 let dyhost = $.getdata('dyhost')
-let dyjsbaccount;
+let dyjsbaccount,dyjsbzcaccount,dyjsbzcname;
 let tz = ($.getval('tz') || '1');//0关闭通知，1默认开启
 const invite=1;//新用户自动邀请，0关闭，1默认开启
 const logs =0;//0为关闭日志，1为开启
