@@ -297,7 +297,7 @@ if (!signheaderArr[0]) {
 
       //await profit()
 
-      var ptime = new Date().getTime()
+      var ptime = new Date().getTime()+""
       if(i==0){
         $.setdata(ptime,`dyjsb_pretime`)
       }else{
