@@ -21,15 +21,15 @@ luckycat/aweme/v1/task/sign_in/detail? url script-request-header https://raw.git
 
 luckycat/aweme/v1/task/done/read? url script-request-header https://raw.githubusercontent.com/jim114042/quanx/main/js/dyjsb.js
 
-luckycat/aweme/v1/task/walk/step_submit? - script-request-header https://raw.githubusercontent.com/jim114042/quanx/main/js/dyjsb.js
+luckycat/aweme/v1/task/walk/step_submit? url script-request-header https://raw.githubusercontent.com/jim114042/quanx/main/js/dyjsb.js
 
-luckycat/aweme/v1/task/done/excitation_ad_treasure_box? - script-request-header https://raw.githubusercontent.com/jim114042/quanx/main/js/dyjsb.js
+luckycat/aweme/v1/task/done/excitation_ad_treasure_box? url script-request-header https://raw.githubusercontent.com/jim114042/quanx/main/js/dyjsb.js
 
-luckycat/aweme/v1/task/done/treasure_task? - script-request-header https://raw.githubusercontent.com/jim114042/quanx/main/js/dyjsb.js
+luckycat/aweme/v1/task/done/treasure_task? url script-request-header https://raw.githubusercontent.com/jim114042/quanx/main/js/dyjsb.js
 
-luckycat/aweme/v1/task/page? - script-request-header https://raw.githubusercontent.com/jim114042/quanx/main/js/dyjsb.js
+luckycat/aweme/v1/task/page? url script-request-header https://raw.githubusercontent.com/jim114042/quanx/main/js/dyjsb.js
 
-luckycat/aweme/v1/task/done/excitation_ad? - script-request-header https://raw.githubusercontent.com/jim114042/quanx/main/js/dyjsb.js
+luckycat/aweme/v1/task/done/excitation_ad? url script-request-header https://raw.githubusercontent.com/jim114042/quanx/main/js/dyjsb.js
 
 
 */
