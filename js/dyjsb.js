@@ -410,8 +410,11 @@ async function control(){
      if(invite == 1){
       await invitation();
      }
+     coins=0
+     if(cash==1){
      if(dyjsbaccount || dyjsbzcaccount){
       await profit()
+     }
      }
      if(cash == 1 && coins >= 30){
       await withdraw()
