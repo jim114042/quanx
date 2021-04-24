@@ -90,9 +90,9 @@
     "id": "dyjsbzc",
     "name": "抖音极速版",
     "keys": [ "signheader", "signcookie", "stepheader", "stepkey", "readheader", "readkey", "bx1header", "bx1key",
-	     "bx2header", "bx2key", "dyjsb_taskheader","dyjsb_taskkey","dyjsb_xxheader","dyjsb_xxkey",
+	     "bx2header", "bx2key", "dyjsb_taskheader","dyjsb_taskkey","dyjsb_xxheader","dyjsb_xxkey","dyjsb_pretime",
 	     "signheader2", "signcookie2", "stepheader2", "stepkey2", "readheader2", "readkey2", "bx1header2", "bx1key2",
-	     "bx2header2", "bx2key2", "dyjsb_taskheader2","dyjsb_taskkey2","dyjsb_xxheader2","dyjsb_xxkey2"
+	     "bx2header2", "bx2key2", "dyjsb_taskheader2","dyjsb_taskkey2","dyjsb_xxheader2","dyjsb_xxkey2","dyjsb_pretime2"
 	    ],
     "author": "@Ariszy",
     "settings": [{
