@@ -27,19 +27,10 @@ luckycat/aweme/v1/task/done/excitation_ad_treasure_box? - script-request-header 
 
 luckycat/aweme/v1/task/done/treasure_task? - script-request-header https://raw.githubusercontent.com/jim114042/quanx/main/js/dyjsb.js
 
-#loon
-http-request /luckycat/aweme/v1/task/sign_in/detail? script-path=https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/dyjsb.js, requires-body=true, timeout=10, tag=抖音极速版sign
+luckycat/aweme/v1/task/page? - script-request-header https://raw.githubusercontent.com/jim114042/quanx/main/js/dyjsb.js
 
-http-request /luckycat/aweme/v1/task/done/read? script-path=https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/dyjsb.js, requires-body=true, timeout=10, tag=抖音极速版read
+luckycat/aweme/v1/task/done/excitation_ad? - script-request-header https://raw.githubusercontent.com/jim114042/quanx/main/js/dyjsb.js
 
-http-request /luckycat/aweme/v1/task/walk/step_submit? script-path=https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/dyjsb.js, requires-body=true, timeout=10, tag=抖音极速版step
-
-#surge
-dyjsbsign = type=http-request,pattern=/luckycat/aweme/v1/task/sign_in/detail?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/dyjsb.js,script-update-interval=0
-
-dyjsbread = type=http-request,pattern=/luckycat/aweme/v1/task/done/read?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/dyjsb.js,script-update-interval=0
-
-dyjsbstep = type=http-request,pattern=/luckycat/aweme/v1/task/walk/step_submit?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/dyjsb.js,script-update-interval=0
 
 */
 const jsname='抖音极速版'
@@ -51,6 +42,10 @@ const stepheaderArr = [],stepkeyArr=[]
 const readheaderArr = [],readkeyArr=[]
 const bx1headerArr = [],bx1keyArr=[]
 const bx2headerArr = [],bx2keyArr=[]
+const taskheaderArr = [],taskkeyArr=[]
+const xxheaderArr = [],xxkeyArr=[]
+const pretimeArr=[]
+
 let signheader = $.getdata('signheader')
 let signcookie = $.getdata('signcookie')
 
@@ -65,6 +60,14 @@ let bx1key = $.getdata('bx1key')
 
 let bx2header = $.getdata('bx2header')
 let bx2key = $.getdata('bx2key')
+
+let taskheader = $.getdata('dyjsb_taskheader')
+let taskkey = $.getdata('dyjsb_taskkey')
+
+let xxheader = $.getdata('dyjsb_xxheader')
+let xxkey = $.getdata('dyjsb_xxkey')
+
+let pretime = $.getdata('dyjsb_pretime')||0
 
 let dyhost = $.getdata('dyhost')
 let dyjsbaccount,dyjsbzcaccount,dyjsbzcname;
@@ -197,6 +200,13 @@ Object.keys(readheader).forEach((item) => {
     bx1keyArr.push($.getdata('bx1key'))
     bx2headerArr.push($.getdata('bx2header'))
     bx2keyArr.push($.getdata('bx2key'))
+
+    taskheaderArr.push($.getdata('dyjsb_taskheader'))
+    taskkeyArr.push($.getdata('dyjsb_taskkey'))
+    xxheaderArr.push($.getdata('dyjsb_xxheader'))
+    xxkeyArr.push($.getdata('dyjsb_xxkey'))
+    pretimeArr.push($.getdata('dyjsb_pretime') || 0)
+
     let dyjsbcount = ($.getval('dyjsbcount') || '1');
   for (let i = 2; i <= dyjsbcount; i++) {
     signheaderArr.push($.getdata(`signheader${i}`))
@@ -209,6 +219,13 @@ Object.keys(readheader).forEach((item) => {
     bx1keyArr.push($.getdata(`bx1key${i}`))
     bx2headerArr.push($.getdata(`bx2header${i}`))
     bx2keyArr.push($.getdata(`bx2key${i}`))
+
+
+    taskheaderArr.push($.getdata(`dyjsb_taskheader${i}`))
+    taskkeyArr.push($.getdata(`dyjsb_taskkey${i}`))
+    xxheaderArr.push($.getdata(`dyjsb_xxheader${i}`))
+    xxkeyArr.push($.getdata(`dyjsb_xxkey${i}`))
+    pretimeArr.push($.getdata(`dyjsb_pretime${i}`)||0)
   }
 }
 !(async () => {
@@ -230,24 +247,63 @@ if (!signheaderArr[0]) {
       bx1key = bx1keyArr[i];
       bx2header = bx2headerArr[i];
       bx2key = bx2keyArr[i];
+
+      taskheader = taskheaderArr[i];
+      taskkey = taskkeyArr[i];
+      xxheader = xxheaderArr[i];
+      xxkey = xxkeyArr[i];
+      pretime = pretimeArr[i];
+
       dyjsbaccount = $.getval(`dyjsbaccount${i}`)
       dyjsbzcaccount = $.getval(`dyjsbzcaccount${i}`)
       dyjsbzcname = $.getval(`dyjsbzcname${i}`)
       $.index = i + 1;
       console.log(`\n开始【抖音极速版${$.index}】`)
+
+      if(new Date().getTime()-pretime<20*60*1000){
+        return;
+      }
+      const tks = await tasklist()
+      if(tks.err_no!=0){
+        $.msg($.name, ``, `获取任务列表失败 ${tks.err_tips}`)
+        return
+      }
+
       //await invite()
-      await sign_in()
+      var tk = tks.data.task_list.find(p=>p.task_id==203)
+      if(tk && !tk.completed){
+        await sign_in()
+      }
       //await withdraw()
       //await step_submit();
       //await step_reward();
+
+      cash=0
+      tk = tks.data.task_list.find(p=>p.task_id==213)
+      if(tk && !tk.completed){
+        cash=1
+      }
+
       await watch_video()
 	    await $.wait(3000)
       await watch_bx1()
 	    await $.wait(3000)
       await watch_bx2()
 	    await $.wait(3000)
+      await xxrw()
+      await $.wait(3000)
+
       await control()
+
       //await profit()
+
+      var ptime = new Date().getTime()
+      if(i==0){
+        $.setdata(ptime,`dyjsb_pretime`)
+      }else{
+        $.setdata(ptime,`dyjsb_pretime${i}`)
+      }
+
       await showmsg()
   }
  }
@@ -314,6 +370,37 @@ function GetCookie() {
     if(dyhost) $.setdata(dyhost,'dyhost')
     $.log(`[${jsname}] 获取host请求: 成功,host: ${host}`)
 	 }
+
+ if($request&&$request.url.indexOf("aweme" && "/task/page?")>=0) {
+    const readheader = $request.url.split(`?`)[1]
+      if (readheader) $.setdata(readheader,`dyjsb_taskheader${$.idx}`)
+      $.log(`[${jsname}] 获取task请求: 成功,taskheader: ${readheader}`)
+      $.msg(`获取taskheader: 成功🎉`, ``)
+     const readkey = JSON.stringify($request.headers)
+    if(readkey)        $.setdata(readkey,`dyjsb_taskkey${$.idx}`)
+      $.log(`[${jsname}] 获取task请求: 成功,taskkey: ${readkey}`)
+      $.msg(`获取taskkey: 成功🎉`, ``)
+    const dyhost = $request.headers['Host']
+    if(dyhost) $.setdata(dyhost,'dyhost')
+    $.log(`[${jsname}] 获取host请求: 成功,host: ${host}`)
+   }
+
+ if($request&&$request.url.indexOf("aweme" && "/task/done/excitation_ad?")>=0) {
+    const readheader = $request.url.split(`?`)[1]
+      if (readheader) $.setdata(readheader,`dyjsb_xxheader${$.idx}`)
+      $.log(`[${jsname}] 获取xx请求: 成功,xxheader: ${readheader}`)
+      $.msg(`获取xxheader: 成功🎉`, ``)
+     const readkey = JSON.stringify($request.headers)
+    if(readkey)        $.setdata(readkey,`dyjsb_xxkey${$.idx}`)
+      $.log(`[${jsname}] 获取xx请求: 成功,xxkey: ${readkey}`)
+      $.msg(`获取xxkey: 成功🎉`, ``)
+    const dyhost = $request.headers['Host']
+    if(dyhost) $.setdata(dyhost,'dyhost')
+    $.log(`[${jsname}] 获取host请求: 成功,host: ${host}`)
+   }
+
+
+
     }
 async function control(){
      if(stepheader && hour == 12 && minute <= 30){
@@ -330,6 +417,22 @@ async function control(){
       await withdraw()
      }
 }
+
+//任务列表
+function tasklist(){
+  return new Promise((resolve, reject) => {
+    let profiturl ={
+      url: `https://${dyhost}/luckycat/aweme/v1/task/page?${taskheader}`,
+      headers: JSON.parse(taskkey),
+    }
+    $.get(profiturl,async(error, response, data) =>{
+       const result = JSON.parse(data)
+       if(logs) $.log(data)
+       resolve(result)
+    })
+  })
+}
+
 //签到
 function sign_in() {
 return new Promise((resolve, reject) => {
@@ -488,6 +591,37 @@ return new Promise((resolve, reject) => {
     })
    })
   } 
+
+
+//限时任务
+function xxrw() {
+  return new Promise((resolve, reject) => {
+    let watch_videourl ={
+      url: `https://${dyhost}/luckycat/aweme/v1/task/done/excitation_ad?${xxheader}`,
+      headers: JSON.parse(xxkey),
+      body: ``
+  }
+   $.post(watch_videourl,(error, response, data) =>{
+     const result = JSON.parse(data)
+       if(logs) $.log(data)
+       message += '📣限时任务\n'
+      if(result.err_no == 0) {
+          message +='🎉'+result.err_tips+'获得:'+result.data.amount+"\n"
+        }
+      else if(result.err_no == 10006){
+          message += '⚠️异常:已经读过了\n'
+      }
+      else{
+          message += '⚠️异常:'+result.err_tips+'\n'+'请重新获取bx2key\n'
+          let other = '⚠️异常:'+result.err_tips+'请重新获取bx2key\n'
+          $.msg(jsname,'',other)
+      }
+          resolve()
+    })
+   })
+  } 
+
+
 function invitation() {
 return new Promise((resolve, reject) => {
   let invitatonurl ={
@@ -514,9 +648,6 @@ return new Promise((resolve, reject) => {
      if(logs) $.log(data)
      let time = Math.round(new Date(new Date().toLocaleDateString()).getTime()/1000)
 coins = result.data.income_data.cash_balance
-if(result.data.profit_detail.cash_income_list.find(item => item.time >= time) && result.data.profit_detail.cash_income_list.find(item => item.task_id == "213")){
-     cash = 0; 
-     }
           resolve()
     })
    })
