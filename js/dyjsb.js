@@ -267,6 +267,7 @@ if (!signheaderArr[0]) {
 	   await watch_video()
 	 },yck*1000)
       }
+      console.log(`延迟${yck}秒看视频`)
 	    
       if(new Date().getTime()-pretime<20*60*1000){	
 	await $.wait((yck+2)*1000)
