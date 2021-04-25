@@ -259,10 +259,20 @@ if (!signheaderArr[0]) {
       dyjsbzcname = $.getval(`dyjsbzcname${i}`)
       $.index = i + 1;
       console.log(`\n开始【抖音极速版${$.index}】`)
-
-      if(new Date().getTime()-pretime<20*60*1000){
+	    
+      int yck = Math.floor(Math.random() * 60)
+	    
+      if(Math.floor(Math.random() * 10)<3){ //大概10次中3次看视频	 
+	 setTimeout(()=>{
+	   await watch_video()
+	 },yck*1000)
+      }
+	    
+      if(new Date().getTime()-pretime<20*60*1000){	
+	await $.wait((yck+2)*1000)
         return;
       }
+      await $.wait(1000)
       const tks = await tasklist()
       if(tks.err_no!=0){
         $.msg($.name, ``, `获取任务列表失败 ${tks.err_tips}`)
@@ -282,16 +292,14 @@ if (!signheaderArr[0]) {
       tk = tks.data.task_list.find(p=>p.task_id==213)
       if(tk && !tk.completed){
         cash=1
-      }
-
-      await watch_video()
-	    await $.wait(3000)
+      }     
+	   
       await watch_bx1()
 	    await $.wait(3000)
       await watch_bx2()
-	    await $.wait(3000)
+	    await $.wait(1000)
       await xxrw()
-      await $.wait(3000)
+      await $.wait(1000)
 
       await control()
 
@@ -303,8 +311,9 @@ if (!signheaderArr[0]) {
       }else{
         $.setdata(ptime,`dyjsb_pretime${i}`)
       }
-
-      await showmsg()
+	
+      await showmsg();
+      await $.wait((yck-4)*1000)
   }
  }
 })()
