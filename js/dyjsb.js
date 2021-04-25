@@ -260,7 +260,7 @@ if (!signheaderArr[0]) {
       $.index = i + 1;
       console.log(`\n开始【抖音极速版${$.index}】`)
 	    
-      int yck = Math.floor(Math.random() * 60)
+      let yck = Math.floor(Math.random() * 60)
 	    
       if(Math.floor(Math.random() * 10)<3){ //大概10次中3次看视频	 
 	 setTimeout(()=>{
