@@ -261,16 +261,20 @@ if (!signheaderArr[0]) {
       console.log(`\n开始【抖音极速版${$.index}】`)
 	    
       let yck = Math.floor(Math.random() * 60)
-      console.log(`延迟${yck}秒看视频`)
-      if(Math.floor(Math.random() * 10)<3){ //大概10次中3次看视频	 
+      if(Math.floor(Math.random() * 10)<3){ //大概10次中3次看视频
+         console.log(`延迟${yck}秒看视频`)	 
 	 setTimeout(async ()=>{
 	   await watch_video()
 	 },yck*1000)
+      }else{
+	 yck=-1
       }
       
 	    
       if(new Date().getTime()-pretime<20*60*1000){
-	await $.wait((yck+2)*1000)	
+	if(yck>=0){
+	  await $.wait((yck+2)*1000)	
+	}
 	await showmsg();
         return;
       }
@@ -313,8 +317,9 @@ if (!signheaderArr[0]) {
       }else{
         $.setdata(ptime,`dyjsb_pretime${i}`)
       }
-	
-      await $.wait((yck-4)*1000)
+      if(yck>=0){
+        await $.wait((yck-4)*1000)
+      }
       await showmsg();
   }
  }
