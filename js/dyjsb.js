@@ -269,8 +269,9 @@ if (!signheaderArr[0]) {
       }
       
 	    
-      if(new Date().getTime()-pretime<20*60*1000){	
-	await $.wait((yck+2)*1000)
+      if(new Date().getTime()-pretime<20*60*1000){
+	await $.wait((yck+2)*1000)	
+	await showmsg();
         return;
       }
       await $.wait(1000)
@@ -313,8 +314,8 @@ if (!signheaderArr[0]) {
         $.setdata(ptime,`dyjsb_pretime${i}`)
       }
 	
-      await showmsg();
       await $.wait((yck-4)*1000)
+      await showmsg();
   }
  }
 })()
