@@ -22,31 +22,30 @@ hostname = bp-api.coohua.com
 
 const $ = new Env('快乐猜歌无限刷');
 let status;
-status = (status = ($.getval("klcg_status") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
-const klcg_urlArr = [], klcg_hdArr = [],klcg_count = ''
+status = (status = ($.getval("ygkcstatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
+const ygkcurlArr = [], ygkchdArr = [],ygkccount = ''
 let num = ($.getval('num') || 5) //循环体
 let times = Math.round(Date.now() / 1000)
-let klcg_url = $.getdata('klcg_url')
-let klcg_hd = $.getdata('klcg_hd')
+let ygkcurl = $.getdata('ygkcurl')
+let ygkchd = $.getdata('ygkchd')
 let ids,anawer,d,a;
 !(async () => {
-  $.msg($.name,'','121')
   if (typeof $request !== "undefined") {
-    await klcg_ck()
+    await ygkcck()
    
-  } else {klcg_urlArr.push($.getdata('klcg_url'))
-    klcg_hdArr.push($.getdata('klcg_hd'))
-    let klcg_count = ($.getval('klcg_count') || '1');
-  for (let i = 2; i <= klcg_count; i++) {
-    klcg_urlArr.push($.getdata(`klcg_url${i}`))
-    klcg_hdArr.push($.getdata(`klcg_hd${i}`))
+  } else {ygkcurlArr.push($.getdata('ygkcurl'))
+    ygkchdArr.push($.getdata('ygkchd'))
+    let ygkccount = ($.getval('ygkccount') || '1');
+  for (let i = 2; i <= ygkccount; i++) {
+    ygkcurlArr.push($.getdata(`ygkcurl${i}`))
+    ygkchdArr.push($.getdata(`ygkchd${i}`))
   }
-    console.log(`------------- 共${klcg_hdArr.length}个账号-------------\n`)
-      for (let i = 0; i < klcg_hdArr.length; i++) {
-        if (klcg_hdArr[i]) {
+    console.log(`------------- 共${ygkchdArr.length}个账号-------------\n`)
+      for (let i = 0; i < ygkchdArr.length; i++) {
+        if (ygkchdArr[i]) {
           let turn = 0;
-          klcg_url = klcg_urlArr[i];
-          klcg_hd = klcg_hdArr[i];
+          ygkcurl = ygkcurlArr[i];
+          ygkchd = ygkchdArr[i];
           $.index = i + 1;
           console.log(`\n开始【快乐猜歌${$.index}】`)
     await search();
@@ -61,15 +60,14 @@ let ids,anawer,d,a;
 //数据获取
 
 
-function klcg_ck() {
-  
+function ygkcck() {
    if ($request.url.indexOf("reward") > -1) {
- const klcg_url = $request.url
-  if(klcg_url)     $.setdata(klcg_url,`klcg_url${status}`)
-    $.log(klcg_url)
-  const klcg_hd = JSON.stringify($request.headers)
-        if(klcg_hd)    $.setdata(klcg_hd,`klcg_hd${status}`)
-$.log(klcg_hd)
+ const ygkcurl = $request.url
+  if(ygkcurl)     $.setdata(ygkcurl,`ygkcurl${status}`)
+    $.log(ygkcurl)
+  const ygkchd = JSON.stringify($request.headers)
+        if(ygkchd)    $.setdata(ygkchd,`ygkchd${status}`)
+$.log(ygkchd)
    $.msg($.name,"",'快乐猜歌'+`${status}` +'数据获取成功！')
   }
 }
@@ -86,8 +84,8 @@ function search(timeout = 0) {
   return new Promise((resolve) => {
 
 let url = {
-        url : "https://bp-api.coohua.com/bubuduo-klcg/game/res/list?"+klcg_url.indexOf("?")[1],
-        headers : JSON.parse(klcg_hd),
+        url : "https://bp-api.coohua.com/bubuduo-klcg/game/res/list?"+ygkcurl.indexOf("?")[1],
+        headers : JSON.parse(ygkchd),
         
 }
       $.get(url, async (err, resp, data) => {
@@ -122,11 +120,11 @@ await $.wait(100);
 function wkzztx(timeout = 0) {
   return new Promise((resolve) => {
 
-let id = klcg_url.replace(/id=\d+&index=\d/,`id=${d}&index=${a}`)
+let id = ygkcurl.replace(/id=\d+&index=\d/,`id=${d}&index=${a}`)
 //$.log(id)
 let url = {
         url : id,
-        headers : JSON.parse(klcg_hd),
+        headers : JSON.parse(ygkchd),
         
 }
       $.get(url, async (err, resp, data) => {
