@@ -30,6 +30,7 @@ let klcg_url = $.getdata('klcg_url')
 let klcg_hd = $.getdata('klcg_hd')
 let ids,anawer,d,a;
 !(async () => {
+  $.msg($.name,'','121')
   if (typeof $request !== "undefined") {
     await klcg_ck()
    
@@ -61,7 +62,7 @@ let ids,anawer,d,a;
 
 
 function klcg_ck() {
-  $.msg($.name,'',$request.url)
+  
    if ($request.url.indexOf("reward") > -1) {
  const klcg_url = $request.url
   if(klcg_url)     $.setdata(klcg_url,`klcg_url${status}`)
