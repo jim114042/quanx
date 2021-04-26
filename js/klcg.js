@@ -61,6 +61,7 @@ let ids,anawer,d,a;
 
 
 function klcg_ck() {
+  $.msg($.name,'',$request.url)
    if ($request.url.indexOf("reward") > -1) {
  const klcg_url = $request.url
   if(klcg_url)     $.setdata(klcg_url,`klcg_url${status}`)
