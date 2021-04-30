@@ -91,12 +91,6 @@ if ($.isNode()) {
 }
 //CK运行
 
-let isGetCookie = typeof $request !== 'undefined'
-if (isGetCookie) {
-   GetCookie();
-   $.done()
-   return
-} 
 if ($.isNode()) {
 //sign
   if (process.env.SIGNHEADER && process.env.SIGNHEADER.indexOf('#') > -1) {
@@ -230,6 +224,12 @@ Object.keys(readheader).forEach((item) => {
   }
 }
 !(async () => {
+let isGetCookie = typeof $request !== 'undefined'
+if (isGetCookie) {
+   GetCookie();
+   return
+} 
+
 if (!signheaderArr[0]) {
     $.msg($.name, '【提示】请先获取抖音极速版一cookie')
     return;
