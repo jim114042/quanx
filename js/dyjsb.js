@@ -95,6 +95,7 @@ let isGetCookie = typeof $request !== 'undefined'
 if (isGetCookie) {
    GetCookie();
    $.done()
+   return
 } 
 if ($.isNode()) {
 //sign
