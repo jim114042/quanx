@@ -359,10 +359,7 @@ function GetCookie() {
 	    $.msg(`获取readkey: 成功🎉`, ``)
     const dyhost = $request.headers['Host']
     if(dyhost) $.setdata(dyhost,'dyhost')
-    else{
-       dyhost=$request.url.split("/luckycat/")[0].split("/")[2]
-       if(dyhost) $.setdata(dyhost,'dyhost')
-    }
+
     $.log(`[${jsname}] 获取host请求: 成功,host: ${host}`)
 	 }
  if($request&&$request.url.indexOf("aweme" && "done/treasure_task")>=0) {
@@ -376,10 +373,6 @@ function GetCookie() {
 	    $.msg(`获取bx1key: 成功🎉`, ``)
     const dyhost = $request.headers['Host']
     if(dyhost) $.setdata(dyhost,'dyhost')
-else{
-       dyhost=$request.url.split("/luckycat/")[0].split("/")[2]
-       if(dyhost) $.setdata(dyhost,'dyhost')
-    }
     $.log(`[${jsname}] 获取host请求: 成功,host: ${host}`)
 	 }
  if($request&&$request.url.indexOf("aweme" && "done/excitation_ad_treasure_box")>=0) {
@@ -393,10 +386,6 @@ else{
 	    $.msg(`获取bx2key: 成功🎉`, ``)
     const dyhost = $request.headers['Host']
     if(dyhost) $.setdata(dyhost,'dyhost')
-else{
-       dyhost=$request.url.split("/luckycat/")[0].split("/")[2]
-       if(dyhost) $.setdata(dyhost,'dyhost')
-    }
     $.log(`[${jsname}] 获取host请求: 成功,host: ${host}`)
 	 }
 
@@ -411,10 +400,6 @@ else{
       $.msg(`获取taskkey: 成功🎉`, ``)
     const dyhost = $request.headers['Host']
     if(dyhost) $.setdata(dyhost,'dyhost')
-else{
-       dyhost=$request.url.split("/luckycat/")[0].split("/")[2]
-       if(dyhost) $.setdata(dyhost,'dyhost')
-    }
     $.log(`[${jsname}] 获取host请求: 成功,host: ${host}`)
    }
 
@@ -429,10 +414,6 @@ else{
       $.msg(`获取xxkey: 成功🎉`, ``)
     const dyhost = $request.headers['Host']
     if(dyhost) $.setdata(dyhost,'dyhost')
-else{
-       dyhost=$request.url.split("/luckycat/")[0].split("/")[2]
-       if(dyhost) $.setdata(dyhost,'dyhost')
-    }
     $.log(`[${jsname}] 获取host请求: 成功,host: ${host}`)
    }
 
