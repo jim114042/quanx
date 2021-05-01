@@ -308,7 +308,7 @@ if (!signheaderArr[0]) {
       await xxrw()
       await $.wait(1000)
 
-      await control()
+      //await control()
 
       //await profit()
 
