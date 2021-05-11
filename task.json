@@ -2,7 +2,7 @@
   "name": "QuanX Task-ZG",
   "description": "收集各个圈x脚本作者的task库，感谢各位大佬的辛勤付出",
   "task": [
-    "0 */8 * * * https://raw.githubusercontent.com/jim114042/AutoSyncScript/CenBoMin/HELPBANG/helpbang.js, tag=互利帮",
+    "0 */8 * * * https://raw.githubusercontent.com/jim114042/quanx/main/js/helpbang.js, tag=互利帮",
     "3 * * * * https://raw.githubusercontent.com/jim114042/ziye/tongbu/Task/shzx.js, tag=搜狐资讯",
     "10 9 * * * https://raw.githubusercontent.com/age174/-/main/csxdr.js, tag=超市小达人, img-url=https://ae01.alicdn.com/kf/Udd9cb36174cf41a7a69e28a643a360a9a.jpg, enabled=true",
     "16 6 * * * hzw.js, tag=孩子王签到",
