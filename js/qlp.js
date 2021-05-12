@@ -72,18 +72,8 @@ let tx = 0  //数字改为1运行脚本可自动提现。建议手动运行。�
           await qlpyb();
           await qlpyb();
           await qlpyb();
-          await qlpyb();
-          await qlpyb();
-          await qlpyb();
-          await qlpyb();
-          await qlpyb();
 
           await qlphb();
-          await kzyyb();
-          await kzyyb();
-          await kzyyb();
-          await kzyyb();
-          await kzyyb();
           await kzyyb();
           await kzyyb();
           await kzyyb();
