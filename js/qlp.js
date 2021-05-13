@@ -68,16 +68,25 @@ let tx = 0  //数字改为1运行脚本可自动提现。建议手动运行。�
           $.index = i + 1;
           console.log(`\n开始【考状元娶老婆${$.index}】`)
           await qlpyb();
+          await $.wait(300);
           await qlpyb();
+          await $.wait(300);
           await qlpyb();
+          await $.wait(300);
           await qlpyb();
+          await $.wait(300);
 
           await qlphb();
+          await $.wait(300);
           
           await kzyyb();
+          await $.wait(300);
           await kzyyb();
+          await $.wait(300);
           await kzyyb();
+          await $.wait(300);
           await kzyyb();
+          await $.wait(300);
           
           await kzyhb();
 if(tx == 1){
