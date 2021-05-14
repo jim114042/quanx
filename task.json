@@ -3,7 +3,7 @@
   "description": "收集各个圈x脚本作者的task库，感谢各位大佬的辛勤付出",
   "task": [
     "5 8 * * * https://raw.githubusercontent.com/xl2101200/-/main/ecwk.js, tag=EC挖矿, img-url=https://raw.githubusercontent.com/sngxpro/QuanX/master/icons/tom.png, enabled=true",
-    "3 8 * * * https://raw.githubusercontent.com/xl2101200/-/main/ipxz.js, tag=ip小站, img-url=https://raw.githubusercontent.com/sngxpro/QuanX/master/icons/tom.png, enabled=true",
+    "3 8 * * * https://raw.githubusercontent.com/jim114042/quanx/main/js/ipxz.js, tag=ip小站, img-url=https://raw.githubusercontent.com/sngxpro/QuanX/master/icons/tom.png, enabled=true",
     "0 8 * * * https://raw.githubusercontent.com/xl2101200/-/main/ttcj.js, tag=天天抽奖365, enabled=true",
     "7 6,9 * * * https://raw.githubusercontent.com/xl2101200/-/main/kkj.js, tag=看看集, enabled=true",
     "6 6-23 * * * https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/xpread.js, tag=笑谱阅读",
