@@ -262,7 +262,7 @@ if (!signheaderArr[0]) {
       console.log(`\n开始【抖音极速版${$.index}】`)
 	    
       let yck = Math.floor(Math.random() * 60)
-      if(Math.floor(Math.random() * 30)<5){ //大概30次中5次看视频
+      if(Math.floor(Math.random() * 20)<3){ //大概20次中3次看视频
          console.log(`延迟${yck}秒看视频`)	 
 	 setTimeout(async ()=>{
 	   await watch_video()
