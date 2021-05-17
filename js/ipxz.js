@@ -74,7 +74,7 @@ function ipxzqd(timeout = 0) {
 let url = {
         url : `https://gate.wanou1.com/miniprogram3/clock/signin`,
         headers : JSON.parse(ipxzhd),
-        body : ``,}
+        body : `modelId=1671`,}
       $.post(url, async (err, resp, data) => {
 
         try {
