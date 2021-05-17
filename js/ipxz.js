@@ -105,9 +105,9 @@ let url = {
         try {
     const result = JSON.parse(data)
         if(result.code == 100){
-  console.log(`\n下次签到时间 `+result.signStartTime + ' - ' + result.signEndTime)
+  console.log(`\n下次签到时间 \n`+result.signStartTime + ' - ' + result.signEndTime)
   if(tz == 1){
-    $.msg($.name,"",'下次签到时间 '+result.signStartTime + ' - ' + result.signEndTime)
+    $.msg($.name,"",'下次签到时间 \n'+result.signStartTime + ' - ' + result.signEndTime)
   }
 } else {
   console.log(`\n`+result.msg)
