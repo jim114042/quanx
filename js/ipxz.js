@@ -23,7 +23,7 @@ status = (status = ($.getval("ipxzstatus") || "1") ) > 1 ? `${status}` : ""; // 
 const ipxzurlArr = [], ipxzhdArr = [],ipxzcount = ''
 let ipxzurl = $.getdata('ipxzurl')
 let ipxzhd = $.getdata('ipxzhd')
-let tz = ($.getval('ipxztz') || '0'); //下个签到时间通知开关,0关闭，1打开
+let tz = 1; //下个签到时间通知开关,0关闭，1打开
 let id = ''
 !(async () => {
   if (typeof $request !== "undefined") {
@@ -102,9 +102,9 @@ let url = {
         try {
     const result = JSON.parse(data)
         if(result.code == 100){
-  console.log(`\n下次签到时间 `+result.signStartTime)
+  console.log(`\n下次签到时间 `+result.signStartTime + ' - ' + result.signEndTime)
 if(tz == 1){
-$.msg($.name,"",'下次签到时间 '+result.signStartTime)}
+$.msg($.name,"",'下次签到时间 '+result.signStartTime + ' - ' + result.signEndTime)}
 } else {
   console.log(`\n`+result.msg)
 }
