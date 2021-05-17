@@ -83,6 +83,9 @@ let url = {
   console.log(`\n`+result.msg)
 } else {
   console.log(`\n`+result.msg)
+  if(tz == 1){
+    $.msg($.name,"", result.msg)
+  }
 }
         } catch (e) {
         } finally {
@@ -103,8 +106,9 @@ let url = {
     const result = JSON.parse(data)
         if(result.code == 100){
   console.log(`\n下次签到时间 `+result.signStartTime + ' - ' + result.signEndTime)
-if(tz == 1){
-$.msg($.name,"",'下次签到时间 '+result.signStartTime + ' - ' + result.signEndTime)}
+  if(tz == 1){
+    $.msg($.name,"",'下次签到时间 '+result.signStartTime + ' - ' + result.signEndTime)
+  }
 } else {
   console.log(`\n`+result.msg)
 }
