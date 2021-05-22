@@ -2,6 +2,7 @@
   "name": "QuanX Task-ZG",
   "description": "收集各个圈x脚本作者的task库，感谢各位大佬的辛勤付出",
   "task": [
+    "2 6 * * * https://raw.githubusercontent.com/xl2101200/-/main/xsg.js, tag=薪时光, img-url=https://raw.githubusercontent.com/sngxpro/QuanX/master/icons/tom.png, enabled=true",
     "0 8 21-31 5-12 * https://raw.githubusercontent.com/qqsdff/script/main/jd/jd_jbczy.js, tag=金榜创造营,  enabled=true",
     "20 9 21-27 5 * https://ghproxy.com/https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_mi.js, tag=京东Redmi合成小金刚, img-url=https://ghproxy.com/https://raw.githubusercontent.com/sngxpro/QuanX/master/icons/monk.png, enabled=true",
     "20 9 20-31 5 * https://ghproxy.com/https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_martin.js, tag=京东人头马x博朗, img-url=https://ghproxy.com/https://raw.githubusercontent.com/sngxpro/QuanX/master/icons/monk.png, enabled=true",
