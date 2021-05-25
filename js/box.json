@@ -24,6 +24,19 @@
 		"icons": ["",
 			""
 		]
+	},{
+		"id": "zc_chxxx",
+		"name": "彩虹消消消",
+		"keys": ["kkjhd","kkjurl","kkjbody"],
+		"settings": [
+			
+		],
+		"author": "@tom",
+		"repo": ["http://nm66.top/chxx.js"],
+		"script": "http://nm66.top/chxx.js",
+		"icons": ["",
+			""
+		]
 	},
 		{
 			"id": "elemSign",
