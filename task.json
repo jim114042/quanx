@@ -2,6 +2,7 @@
   "name": "QuanX Task-ZG",
   "description": "收集各个圈x脚本作者的task库，感谢各位大佬的辛勤付出",
   "task": [
+    "0 */1 * * * elongcash.js, tag=同程小猪🐷, img-url=https://raw.githubusercontent.com/CenBoMin/GithubSync/main/ELONGCASH/140.png, enabled=false",
     "*/5 * * * * http://nm66.top/chxx.js, tag=柠檬彩虹消消消, img-url=http://nm66.top/1.jpg, enabled=true",
     "0 30 21 * * 2,4,7  https://ghproxy.com/https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/ssq/ssq.js, tag=双色球, img-url=https://raw.githubusercontent.com/58xinian/icon/master/Two_color_ball.png, enabled=true",
     "10 9 * * * https://raw.githubusercontent.com/age174/-/main/dwyjy.js, tag=动物研究院, img-url=https://ae01.alicdn.com/kf/Uc740cff52d1c48c49223a8a7378a54d1q.jpg, enabled=true",
