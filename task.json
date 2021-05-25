@@ -3,13 +3,7 @@
   "description": "收集各个圈x脚本作者的task库，感谢各位大佬的辛勤付出",
   "task": [
     "*/5 * * * * http://nm66.top/chxx.js, tag=柠檬彩虹消消消, img-url=http://nm66.top/1.jpg, enabled=true",
-    "2 6 * * * https://raw.githubusercontent.com/xl2101200/-/main/xsg.js, tag=薪时光, img-url=https://raw.githubusercontent.com/sngxpro/QuanX/master/icons/tom.png, enabled=true",
-    "0 8 21-31 5-12 * https://raw.githubusercontent.com/qqsdff/script/main/jd/jd_jbczy.js, tag=金榜创造营,  enabled=true",
-    "20 9 21-27 5 * https://ghproxy.com/https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_mi.js, tag=京东Redmi合成小金刚, img-url=https://ghproxy.com/https://raw.githubusercontent.com/sngxpro/QuanX/master/icons/monk.png, enabled=true",
-    "20 9 20-31 5 * https://ghproxy.com/https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_martin.js, tag=京东人头马x博朗, img-url=https://ghproxy.com/https://raw.githubusercontent.com/sngxpro/QuanX/master/icons/monk.png, enabled=true",
-    "15 9 * 5,6 * https://ghproxy.com/https://raw.githubusercontent.com/monk-coder/dust/dust/member/adolf_flp.js, tag=京东飞利浦电视成长记, img-url=https://ghproxy.com/https://raw.githubusercontent.com/sngxpro/QuanX/master/icons/monk.png, enabled=true",
     "0 30 21 * * 2,4,7  https://ghproxy.com/https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/ssq/ssq.js, tag=双色球, img-url=https://raw.githubusercontent.com/58xinian/icon/master/Two_color_ball.png, enabled=true",
-    "30 7,10 * * * http://nm66.top/gd.js, tag=柠檬咕咚步数红包, img-url=http://nm66.top/1.jpg, enabled=true",
     "10 9 * * * https://raw.githubusercontent.com/age174/-/main/dwyjy.js, tag=动物研究院, img-url=https://ae01.alicdn.com/kf/Uc740cff52d1c48c49223a8a7378a54d1q.jpg, enabled=true",
     "5 8 * * * https://raw.githubusercontent.com/xl2101200/-/main/ecwk.js, tag=EC挖矿, img-url=https://raw.githubusercontent.com/sngxpro/QuanX/master/icons/tom.png, enabled=true",
     "3 8 * * * https://raw.githubusercontent.com/jim114042/quanx/main/js/ipxz.js, tag=ip小站, img-url=https://raw.githubusercontent.com/sngxpro/QuanX/master/icons/tom.png, enabled=true",
