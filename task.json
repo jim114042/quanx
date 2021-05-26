@@ -2,7 +2,7 @@
   "name": "QuanX Task-ZG",
   "description": "收集各个圈x脚本作者的task库，感谢各位大佬的辛勤付出",
   "task": [
-    "*/10 * * * * https://ghproxy.com/https://raw.githubusercontent.com/panghu999/ningmeng/main/fhxz.js, tag=柠檬富豪小镇, enabled=true",
+    "*/10 * * * * http://nm66.top/fhxz.js, tag=柠檬富豪小镇, enabled=true",
     "*/10 * * * * http://nm66.top/kxdfs.js, tag=开心大丰收, img-url=circles.hexagongrid.fill.system, enabled=true",
     "*/1 * * * * http://nm66.top/qmlzc.js, tag=柠檬全民来找茬, img-url=circles.hexagongrid.fill.system, enabled=true",
     "*/1 * * * * http://nm66.top/qmdff.js, tag=柠檬全民大丰收, img-url=http://nm66.top/1.jpg, enabled=true",
