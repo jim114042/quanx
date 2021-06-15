@@ -279,6 +279,11 @@ if (!signheaderArr[0]) {
 	await showmsg();
         return;
       }
+      if(Math.floor(Math.random() * 10)>=8){ //大概10次中2次跳过
+	$.log('跳过宝盒')
+	return;
+      }
+	    
       await $.wait(1000)
       const tks = await tasklist()
       if(tks.err_no!=0){
@@ -542,12 +547,15 @@ return new Promise((resolve, reject) => {
        if(logs) $.log(data)
        message += '📣看视频\n'
       if(result.err_no == 0) {
+	   $.log('看视频OK')
           message +='🎉'+result.err_tips+'获得:'+result.data.score_amount+"\n"
         }
       else if(result.err_no == 10006){
+	   $.log('看视频Error')
           message += '⚠️异常:已经读过了\n'
       }
       else{
+	   $.log('看视频Error')
           message += '⚠️异常:'+result.err_tips+'\n'+'请重新获取readkey\n'
           let other = '⚠️异常:'+result.err_tips+'请重新获取readkey\n'
           $.msg(jsname,'',other)
