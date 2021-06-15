@@ -279,7 +279,7 @@ if (!signheaderArr[0]) {
 	await showmsg();
         return;
       }
-      if(Math.floor(Math.random() * 10)>=6){ //大概10次中4次跳过
+      if(Math.floor(Math.random() * 10)>=5){ //大概10次中5次跳过
 	$.log('跳过宝盒')
 	return;
       }
