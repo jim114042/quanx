@@ -262,7 +262,7 @@ if (!signheaderArr[0]) {
       console.log(`\n开始【抖音极速版${$.index}】`)
 	    
       let yck = Math.floor(Math.random() * 60)
-      if(Math.floor(Math.random() * 20)<3){ //大概20次中3次看视频
+      if(Math.floor(Math.random() * 30)<3){ //大概30次中3次看视频
          console.log(`延迟${yck}秒看视频`)	 
 	 setTimeout(async ()=>{
 	   await watch_video()
@@ -279,7 +279,7 @@ if (!signheaderArr[0]) {
 	await showmsg();
         return;
       }
-      if(Math.floor(Math.random() * 10)>=2){ //大概10次中8次跳过
+      if(Math.floor(Math.random() * 10)>=5){ //大概10次中5次跳过
 	$.log('跳过宝盒')
 	return;
       }
