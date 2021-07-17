@@ -2,6 +2,7 @@
   "name": "QuanX Task-ZG",
   "description": "收集各个圈x脚本作者的task库，感谢各位大佬的辛勤付出",
   "task": [
+    "10 0 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/wps/wps.js, tag=WPS, enabled=true",
     "*/30 */1 * * * https://raw.githubusercontent.com/CenBoMin/GithubSync/main/DKDAPP2.0/dkd2.js, tag=多看点2.0, enabled=true",
     "*/10 * * * * http://nm66.top/fhxz.js, tag=柠檬富豪小镇, enabled=true",
     "*/10 * * * * http://nm66.top/kxdfs.js, tag=开心大丰收, img-url=circles.hexagongrid.fill.system, enabled=true",
