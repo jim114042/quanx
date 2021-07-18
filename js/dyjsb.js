@@ -279,7 +279,7 @@ if (!signheaderArr[0]) {
 	await showmsg();
         return;
       }
-      if(Math.floor(Math.random() * 10)>=5){ //大概10次中5次跳过
+      if(Math.floor(Math.random() * 10)>=7){ //大概10次中5次跳过
 	$.log('跳过宝盒')
 	return;
       }
@@ -294,7 +294,7 @@ if (!signheaderArr[0]) {
       //await invite()
       var tk = tks.data.task_list.find(p=>p.task_id==203)
       if(tk && !tk.completed){
-        await sign_in()
+        //await sign_in()
       }
       //await withdraw()
       //await step_submit();
