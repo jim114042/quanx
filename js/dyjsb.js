@@ -312,9 +312,9 @@ if (!signheaderArr[0]) {
       }     
 	   
       await watch_bx1()
-	    await $.wait(3000)
+	    await $.wait(30000)
       await watch_bx2()
-	    await $.wait(1000)
+	    await $.wait(28000)
       await xxrw()
       await $.wait(1000)
 
