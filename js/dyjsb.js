@@ -266,9 +266,11 @@ if (!signheaderArr[0]) {
          console.log(`延迟${yck}秒看视频`)
 	 await $.wait(yck * 1000)
 	 var t = Math.floor(Math.random() * 6)
+         console.log(`看${t}个视频`)
 	 for(var i3=0;i3<t;i3++){
 	   let t1 = Math.floor(Math.random() * 20) + 30
 	   if(i3!=0){
+             console.log(`等待${t1}秒看下一个`)
 	     await $.wait(t1 * 1000)
 	   }
 	   await watch_video()
