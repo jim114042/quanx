@@ -261,21 +261,24 @@ if (!signheaderArr[0]) {
       $.index = i + 1;
       console.log(`\n开始【抖音极速版${$.index}】`)
 	    
-      let yck = Math.floor(Math.random() * 60)
-      if(Math.floor(Math.random() * 30)<3){ //大概30次中3次看视频
-         console.log(`延迟${yck}秒看视频`)	 
-	 setTimeout(async ()=>{
+      let yck = Math.floor(Math.random() * 180)
+      if(Math.floor(Math.random() * 20)<3){ //大概30次中3次看视频
+         console.log(`延迟${yck}秒看视频`)
+	 await $.wait(yck * 1000)
+	 var t = Math.floor(Math.random() * 6)
+	 for(var i=0;i<t;i++){
+	   let t1 = Math.floor(Math.random() * 20) + 30
+	   if(i!=0){
+	     await $.wait(t1 * 1000)
+	   }
 	   await watch_video()
-	 },yck*1000)
+	 }
       }else{
 	 yck=-1
       }
       
 	    
       if(new Date().getTime()-pretime<20*60*1000){
-	if(yck>=0){
-	  await $.wait((yck+2)*1000)	
-	}
 	await showmsg();
         return;
       }
