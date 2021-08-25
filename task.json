@@ -2,7 +2,7 @@
   "name": "QuanX Task-ZG",
   "description": "收集各个圈x脚本作者的task库，感谢各位大佬的辛勤付出",
   "task": [
-    "0 6-20 * * * https://raw.githubusercontent.com/xl2101200/-/main/jz.js, tag=九章头条, enabled=true",
+    "0 6-20 * * * https://raw.githubusercontent.com/xl2101200/-/main/jztt.js, tag=九章头条, enabled=true",
     "0 6,17 * * * https://raw.githubusercontent.com/jim114042/AutoSyncScript/ZIYE/Task/znxq.js, tag=臻浓星球, enabled=true",
     "0 6-23 * * * https://raw.githubusercontent.com/jim114042/AutoSyncScript/ZIYE/Task/dsj.js, tag=电视家, enabled=true",
     "*/30 */1 * * * https://raw.githubusercontent.com/CenBoMin/GithubSync/main/DKDAPP2.0/dkd2.js, tag=多看点2.0, enabled=true",
