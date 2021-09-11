@@ -42,5 +42,6 @@
     "5 5 * * * https://raw.githubusercontent.com/Sunert/Script/master/Task/Youth_Read.js, tag=中青自动阅读, img-url=https://raw.githubusercontent.com/Orz-3/task/master/youth.png, enabled=false",
     "*/15 5-23 * * * https://raw.githubusercontent.com/jim114042/AutoSyncScript/ZIYE/Task/qczjspeed.js, tag=汽车之家极速版, img-url=https://raw.githubusercontent.com/Orz-3/task/master/qczj.png, enabled=false",
     "0 5-23 * * * http://47.101.146.160/scripts/jkd.js, tag=聚看点（已黑）, img-url=https://raw.githubusercontent.com/Sunert/Profiles/master/QuantumultX/Rules/Images/icon/jukan.png, enabled=true",
+    "0 5-23 * * * http://47.101.146.160/scripts/htt.js, tag=惠头条, img-url=https://raw.githubusercontent.com/Sunert/Profiles/master/QuantumultX/Rules/Images/icon/jukan.png, enabled=true",
   ]
 }
